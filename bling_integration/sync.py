@@ -84,19 +84,9 @@ class SyncManager:
             if not pedidos:
                 break
 
-            # Busca detalhes completos (itens, parcelas, transporte, etc.)
-            detalhados = []
-            for p in pedidos:
-                try:
-                    resp_detalhe = self._client.get_pedido(p["id"])
-                    detalhados.append(resp_detalhe.get("data") or p)
-                except Exception as exc:
-                    logger.warning("[%s] Falha ao detalhar pedido %s: %s", self._account, p.get("id"), exc)
-                    detalhados.append(p)
-
-            self._db.upsert_pedidos(detalhados, self._account)
-            total += len(detalhados)
-            logger.info("[%s] Pagina %d: %d pedidos (acumulado: %d)", self._account, pagina, len(detalhados), total)
+            self._db.upsert_pedidos(pedidos, self._account)
+            total += len(pedidos)
+            logger.info("[%s] Pagina %d: %d pedidos (acumulado: %d)", self._account, pagina, len(pedidos), total)
 
             # Se retornou menos que o limite, chegamos na última página
             if len(pedidos) < 100:
