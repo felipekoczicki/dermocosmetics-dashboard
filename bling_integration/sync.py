@@ -80,6 +80,7 @@ class SyncManager:
             resp = self._client.get_pedidos_page(pagina, data_inicial, data_final)
             pedidos = resp.get("data") or []
 
+            # A API do Bling não retorna meta/totalPaginas — pagina até data vazio
             if not pedidos:
                 break
 
@@ -95,12 +96,10 @@ class SyncManager:
 
             self._db.upsert_pedidos(detalhados, self._account)
             total += len(detalhados)
+            logger.info("[%s] Pagina %d: %d pedidos (acumulado: %d)", self._account, pagina, len(detalhados), total)
 
-            meta = resp.get("meta") or {}
-            total_paginas = int(meta.get("totalPaginas", 1))
-            logger.debug("[%s] Página %d/%d (%d pedidos)", self._account, pagina, total_paginas, len(pedidos))
-
-            if pagina >= total_paginas:
+            # Se retornou menos que o limite, chegamos na última página
+            if len(pedidos) < 100:
                 break
             pagina += 1
 
