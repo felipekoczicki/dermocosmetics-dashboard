@@ -72,7 +72,7 @@ class SyncManager:
         return total
 
     def _sync_window(self, data_inicial: str, data_final: str) -> int:
-        logger.info("[%s] Janela: %s → %s", self._account, data_inicial, data_final)
+        logger.info("[%s] Janela: %s ate %s", self._account, data_inicial, data_final)
         pagina = 1
         total = 0
 
