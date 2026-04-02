@@ -4,5 +4,18 @@
       "Bash(git:*)",
       "Bash(python -m pip install -r \"/c/Users/Lenovo/Desktop/Claude_Cloude_Project/dermocosmetics-dashboard/requirements.txt\" -q)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$PATH:/c/Program Files/GitHub CLI\" && cd \"c:/Users/Lenovo/Desktop/Claude_Cloude_Project\" && git add -A && git diff --cached --quiet || git commit -m \"auto-sync: $(date '+%Y-%m-%d %H:%M:%S')\" && git push 2>&1 || true"
+          }
+        ]
+      }
+    ]
   }
 }
