@@ -94,5 +94,5 @@ class SyncManager:
                 break
             pagina += 1
 
-        logger.info("[%s] %s → %s: %d pedidos importados", self._account, data_inicial, data_final, total)
+        logger.info("[%s] %s ate %s: %d pedidos importados", self._account, data_inicial, data_final, total)
         return total
