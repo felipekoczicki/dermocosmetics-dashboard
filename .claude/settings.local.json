@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git:*)",
-      "Bash(python -m pip install -r \"/c/Users/Lenovo/Desktop/Claude_Cloude_Project/dermocosmetics-dashboard/requirements.txt\" -q)"
+      "Bash(python -m pip install -r \"/c/Users/Lenovo/Desktop/Claude_Cloude_Project/dermocosmetics-dashboard/requirements.txt\" -q)",
+      "Bash(python:*)"
     ]
   },
   "hooks": {

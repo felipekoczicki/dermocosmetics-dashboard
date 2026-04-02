@@ -62,7 +62,7 @@ class BlingClient:
 
     def get_pedidos_page(self, pagina: int, data_inicial: str, data_final: str) -> dict:
         """
-        Retorna uma página de pedidos de venda.
+        Retorna uma página de pedidos de venda (resumo).
 
         Parâmetros de data no formato YYYY-MM-DD.
         O Bling rejeita intervalos maiores que 1 ano (HTTP 400).
@@ -73,6 +73,13 @@ class BlingClient:
             "dataInicial": data_inicial,
             "dataFinal": data_final,
         })
+
+    def get_pedido(self, pedido_id: int) -> dict:
+        """
+        Retorna o detalhe completo de um pedido (itens, parcelas, transporte, etc.).
+        Endpoint: GET /pedidos/vendas/{id}
+        """
+        return self.get(f"/pedidos/vendas/{pedido_id}")
 
     # ------------------------------------------------------------------
     # Internos
