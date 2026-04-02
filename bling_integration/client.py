@@ -36,31 +36,38 @@ class BlingClient:
         params = params or {}
 
         for attempt in range(1, _MAX_RETRIES + 1):
-            self._throttle()
-            token = self._token_manager.get_access_token()
-            resp = self._session.get(
-                url,
-                headers={"Authorization": f"Bearer {token}"},
-                params=params,
-                timeout=30,
-            )
+            try:
+                self._throttle()
+                token = self._token_manager.get_access_token()
+                resp = self._session.get(
+                    url,
+                    headers={"Authorization": f"Bearer {token}"},
+                    params=params,
+                    timeout=30,
+                )
 
-            if resp.status_code == 429:
+                if resp.status_code == 429:
+                    wait = _RETRY_WAIT_429 * attempt
+                    logger.warning("Rate limit atingido. Aguardando %.0fs (tentativa %d/%d).", wait, attempt, _MAX_RETRIES)
+                    time.sleep(wait)
+                    continue
+
+                if resp.status_code in (502, 503, 504):
+                    wait = _RETRY_WAIT_429 * attempt
+                    logger.warning("Erro %d (servidor). Aguardando %.0fs (tentativa %d/%d).", resp.status_code, wait, attempt, _MAX_RETRIES)
+                    time.sleep(wait)
+                    continue
+
+                resp.raise_for_status()
+                return resp.json()
+
+            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as exc:
                 wait = _RETRY_WAIT_429 * attempt
-                logger.warning("Rate limit atingido. Aguardando %.0fs (tentativa %d/%d).", wait, attempt, _MAX_RETRIES)
+                logger.warning("Erro de conexao: %s. Aguardando %.0fs (tentativa %d/%d).", exc.__class__.__name__, wait, attempt, _MAX_RETRIES)
+                self._session = requests.Session()  # reseta a sessao
                 time.sleep(wait)
-                continue
 
-            if resp.status_code in (502, 503, 504):
-                wait = _RETRY_WAIT_429 * attempt
-                logger.warning("Erro %d (servidor). Aguardando %.0fs (tentativa %d/%d).", resp.status_code, wait, attempt, _MAX_RETRIES)
-                time.sleep(wait)
-                continue
-
-            resp.raise_for_status()
-            return resp.json()
-
-        raise RuntimeError(f"Falha após {_MAX_RETRIES} tentativas em {url}")
+        raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
 
     # ------------------------------------------------------------------
     # Endpoints específicos
