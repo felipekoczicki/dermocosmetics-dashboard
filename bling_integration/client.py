@@ -51,6 +51,12 @@ class BlingClient:
                 time.sleep(wait)
                 continue
 
+            if resp.status_code in (502, 503, 504):
+                wait = _RETRY_WAIT_429 * attempt
+                logger.warning("Erro %d (servidor). Aguardando %.0fs (tentativa %d/%d).", resp.status_code, wait, attempt, _MAX_RETRIES)
+                time.sleep(wait)
+                continue
+
             resp.raise_for_status()
             return resp.json()
 
