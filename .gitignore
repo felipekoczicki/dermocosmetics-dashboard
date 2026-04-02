@@ -8,3 +8,8 @@ venv/
 dist/
 build/
 .streamlit/secrets.toml
+
+# Bling integration — arquivos sensíveis
+bling_integration/.env
+bling_integration/tokens/
+bling_integration/pedidos_bling.db
