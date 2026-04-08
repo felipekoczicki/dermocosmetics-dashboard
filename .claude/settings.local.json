@@ -8,7 +8,8 @@
       "Bash(schtasks /query /fo LIST /v)",
       "Bash(schtasks:*)",
       "Bash(cmd.exe:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(start \"\" streamlit run app.py)"
     ]
   },
   "hooks": {
