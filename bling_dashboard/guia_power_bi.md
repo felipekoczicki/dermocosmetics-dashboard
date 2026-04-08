@@ -35,29 +35,17 @@ Abra o **Power Query Editor** (Transformar Dados) e aplique para cada tabela:
 
 ---
 
-## 3. Criar tabela auxiliar de Canais
+## 3. Importar tabela de Canais
 
-No Power Query, crie uma **Nova Consulta em Branco** e cole o código abaixo:
+1. **Obter Dados** → **Texto/CSV**
+2. Selecione o arquivo:
+   `C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\canais_template.csv`
+3. No Power Query, verifique que o delimitador é **Ponto e vírgula (;)**
+4. Renomeie a consulta para `dim_canais`
+5. Altere o tipo da coluna `loja_id` para **Número Inteiro**
+6. Remova a coluna `total_pedidos` (não é necessária no modelo)
 
-```
-= Table.FromRows(
-    {
-        {"27.415.911/0001-36", "Mercado Livre"},
-        {"35.635.824/0001-12", "Shopee"},
-        {"03.007.331/0001-41", "Amazon"},
-        {"15.436.940/0001-03", "Amazon"},
-        {"39.420.373/0002-38", "Magalu"},
-        {"39.420.373/0001-57", "Magalu"},
-        {"47.960.950/0001-21", "TikTok Shop"},
-        {"01.239.313/0001-60", "Outro"},
-        {"33.041.260/0652-90", "Outro"},
-        {"", "Venda Direta / Shopify"}
-    },
-    {"intermediador_cnpj", "canal"}
-)
-```
-
-Nomeie essa consulta como `dim_canais`.
+> Para atualizar os nomes dos canais no futuro, edite o arquivo `canais_template.csv` e clique em **Atualizar** no Power BI.
 
 ---
 
