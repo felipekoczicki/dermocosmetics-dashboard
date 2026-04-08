@@ -43,8 +43,8 @@ with st.sidebar:
     data_min = df_pedidos_raw["data"].min().date()
     data_max = df_pedidos_raw["data"].max().date()
 
-    data_inicio = st.date_input("De", value=pd.Timestamp("2025-01-01").date(), min_value=data_min, max_value=data_max)
-    data_fim = st.date_input("Até", value=data_max, min_value=data_min, max_value=data_max)
+    data_inicio = st.date_input("De", value=pd.Timestamp("2025-01-01").date(), min_value=data_min, max_value=data_max, format="DD/MM/YYYY")
+    data_fim = st.date_input("Até", value=data_max, min_value=data_min, max_value=data_max, format="DD/MM/YYYY")
 
     st.divider()
     if st.button("🔄 Recarregar dados", use_container_width=True):
