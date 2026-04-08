@@ -13,7 +13,7 @@ from config import PARQUET_DIR, CANAIS_CSV, SITUACOES_EXCLUIDAS
 
 
 def _carregar_mapa_canais() -> dict[int, str]:
-    df = pd.read_csv(CANAIS_CSV, sep=";", dtype={"loja_id": "Int64", "canal_nome": str})
+    df = pd.read_csv(CANAIS_CSV, sep=";", dtype={"loja_id": "Int64", "canal_nome": str}, encoding="utf-8-sig")
     return dict(zip(df["loja_id"], df["canal_nome"].fillna("Sem Nome")))
 
 
