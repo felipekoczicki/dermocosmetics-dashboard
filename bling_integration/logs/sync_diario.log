@@ -96,3 +96,50 @@ Exportando parcelas...
   363,111 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
 
 Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-08 12:10:53  INFO      ============================================================
+2026-04-08 12:10:53  INFO      Conta: conta_1
+2026-04-08 12:10:53  INFO      ============================================================
+2026-04-08 12:10:53  INFO      [conta_1] Sincronização incremental a partir de 2026-04-07
+2026-04-08 12:10:53  INFO      [conta_1] Janela: 2026-04-07 ate 2026-04-08
+2026-04-08 12:10:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:11:04  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-08 12:11:24  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-08 12:11:54  ERROR     Erro inesperado durante a sincronização.
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_sync.py", line 98, in main
+    total = sync.sync_incremental()
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 60, in sync_incremental
+    return self._sync_range(start, date.today())
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 69, in _sync_range
+    count = self._sync_window(window_start.isoformat(), window_end.isoformat())
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 80, in _sync_window
+    resp = self._client.get_pedidos_page(pagina, data_inicial, data_final)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 83, in get_pedidos_page
+    return self.get("/pedidos/vendas", {
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+        "pagina": pagina,
+        ^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "dataFinal": data_final,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 356,778
+Com detalhe      : 354,535 (99.4%)
+Sem detalhe      : 2,243
+
+Exportando pedidos...
+  356,778 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  468,591 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  363,819 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
