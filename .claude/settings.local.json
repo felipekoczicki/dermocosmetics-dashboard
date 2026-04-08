@@ -3,7 +3,12 @@
     "allow": [
       "Bash(git:*)",
       "Bash(python -m pip install -r \"/c/Users/Lenovo/Desktop/Claude_Cloude_Project/dermocosmetics-dashboard/requirements.txt\" -q)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(kill %1)",
+      "Bash(schtasks /query /fo LIST /v)",
+      "Bash(schtasks:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(powershell:*)"
     ]
   },
   "hooks": {
