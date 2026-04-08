@@ -9,7 +9,12 @@ import streamlit as st
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import PARQUET_DIR, CANAL_MAP, CANAL_DIRETO, SITUACOES_EXCLUIDAS
+from config import PARQUET_DIR, CANAIS_CSV, SITUACOES_EXCLUIDAS
+
+
+def _carregar_mapa_canais() -> dict[int, str]:
+    df = pd.read_csv(CANAIS_CSV, sep=";", dtype={"loja_id": "Int64", "canal_nome": str})
+    return dict(zip(df["loja_id"], df["canal_nome"].fillna("Sem Nome")))
 
 
 @st.cache_data(ttl=3600, show_spinner="Carregando dados...")
@@ -17,7 +22,9 @@ def carregar_pedidos() -> pd.DataFrame:
     path = Path(PARQUET_DIR) / "pedidos.parquet"
     df = pd.read_parquet(path)
     df["data"] = pd.to_datetime(df["data"], errors="coerce")
-    df["canal"] = df["intermediador_cnpj"].map(CANAL_MAP).fillna(CANAL_DIRETO)
+    mapa_canais = _carregar_mapa_canais()
+    df["loja_id"] = pd.to_numeric(df["loja_id"], errors="coerce").astype("Int64")
+    df["canal"] = df["loja_id"].map(mapa_canais).fillna("Sem Nome")
     df = df[~df["situacao_valor"].isin(SITUACOES_EXCLUIDAS)]
     df = df.dropna(subset=["data"])
     return df
