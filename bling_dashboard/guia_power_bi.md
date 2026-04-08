@@ -79,7 +79,7 @@ Em **Exibição de Modelo**, crie os relacionamentos abaixo:
 |-------------|-------|---------------|-------|---------------|
 | `pedidos` | `id` | `itens` | `pedido_id` | 1 : Muitos |
 | `pedidos` | `id` | `parcelas` | `pedido_id` | 1 : Muitos |
-| `pedidos` | `intermediador_cnpj` | `dim_canais` | `intermediador_cnpj` | Muitos : 1 |
+| `pedidos` | `loja_id` | `dim_canais` | `loja_id` | Muitos : 1 |
 | `dim_calendario` | `Date` | `pedidos` | `data` | 1 : Muitos |
 
 > Marque `dim_calendario` como **Tabela de Datas** (clique direito → Marcar como tabela de datas → coluna `Date`).
