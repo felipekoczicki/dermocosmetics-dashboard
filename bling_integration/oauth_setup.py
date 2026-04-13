@@ -18,8 +18,8 @@ import requests
 from auth import TokenManager
 from config import BlingAccount, load_accounts
 
-AUTH_URL = "https://www.bling.com.br/Api/v3/oauth/authorize"
-TOKEN_URL = "https://www.bling.com.br/Api/v3/oauth/token"
+AUTH_URL = "https://api.bling.com.br/Api/v3/oauth/authorize"
+TOKEN_URL = "https://api.bling.com.br/Api/v3/oauth/token"
 
 
 def _basic_auth(client_id: str, client_secret: str) -> str:
