@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tarefa.nome }} — Minhas Tarefas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+<header class="bg-white border-b border-gray-200 px-6 py-4">
+    <div class="max-w-2xl mx-auto flex items-center gap-3">
+        <a href="/" class="text-gray-400 hover:text-gray-600 transition-colors">
+            ← Voltar
+        </a>
+    </div>
+</header>
+
+<main class="max-w-2xl mx-auto px-6 py-8">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6">
+        <form method="post" action="/atualizar/{{ tarefa.id }}" class="space-y-5">
+            <div>
+                <label class="block text-xs font-medium text-gray-500 mb-1">Nome</label>
+                <input type="text" name="nome" value="{{ tarefa.nome }}" required
+                    class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div>
+                <label class="block text-xs font-medium text-gray-500 mb-1">Descrição</label>
+                <textarea name="descricao" rows="5"
+                    class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none">{{ tarefa.descricao or '' }}</textarea>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">Prioridade</label>
+                    <select name="prioridade" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="alta"   {% if tarefa.prioridade == 'alta'   %}selected{% endif %}>Alta</option>
+                        <option value="media"  {% if tarefa.prioridade == 'media'  %}selected{% endif %}>Média</option>
+                        <option value="baixa"  {% if tarefa.prioridade == 'baixa'  %}selected{% endif %}>Baixa</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">Status</label>
+                    <select name="status" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="pendente"  {% if tarefa.status == 'pendente'  %}selected{% endif %}>Pendente</option>
+                        <option value="andamento" {% if tarefa.status == 'andamento' %}selected{% endif %}>Em andamento</option>
+                        <option value="concluida" {% if tarefa.status == 'concluida' %}selected{% endif %}>Concluída</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">Vencimento</label>
+                    <input type="date" name="vencimento" value="{{ tarefa.vencimento or '' }}"
+                        class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+                <form method="post" action="/excluir/{{ tarefa.id }}" onsubmit="return confirm('Excluir esta tarefa?')">
+                    <button type="submit" class="text-sm text-red-500 hover:text-red-700 transition-colors">
+                        Excluir tarefa
+                    </button>
+                </form>
+                <div class="flex gap-2">
+                    <a href="/" class="border border-gray-200 text-gray-600 text-sm font-medium px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        Cancelar
+                    </a>
+                    <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                        Salvar
+                    </button>
+                </div>
+            </div>
+        </form>
+        <p class="text-xs text-gray-300 mt-4">Criada em {{ tarefa.criado_em }}</p>
+    </div>
+</main>
+
+</body>
+</html>
