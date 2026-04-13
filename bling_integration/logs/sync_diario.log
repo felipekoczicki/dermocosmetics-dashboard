@@ -143,3 +143,905 @@ Exportando parcelas...
   363,819 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
 
 Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-08 13:10:53  INFO      ============================================================
+2026-04-08 13:10:53  INFO      Conta: conta_1
+2026-04-08 13:10:53  INFO      ============================================================
+2026-04-08 13:10:53  INFO      [conta_1] Sincronização incremental a partir de 2026-04-07
+2026-04-08 13:10:53  INFO      [conta_1] Janela: 2026-04-07 ate 2026-04-08
+2026-04-08 13:10:54  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-08 13:10:54  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-08 13:10:55  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-08 13:10:55  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-08 13:10:56  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-08 13:10:56  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-08 13:10:57  INFO      [conta_1] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-08 13:10:57  INFO      [conta_1] Pagina 8: 46 pedidos (acumulado: 746)
+2026-04-08 13:10:57  INFO      [conta_1] 2026-04-07 ate 2026-04-08: 746 pedidos importados
+2026-04-08 13:10:57  INFO      [conta_1] Total sincronizado: 746 pedidos
+2026-04-08 13:10:57  INFO      Resumo [conta_1]: 746 pedidos sincronizados
+2026-04-08 13:10:57  INFO      Total no banco [conta_1]: 279411 registros
+2026-04-08 13:10:57  INFO      ============================================================
+2026-04-08 13:10:57  INFO      Conta: conta_2
+2026-04-08 13:10:57  INFO      ============================================================
+2026-04-08 13:10:57  INFO      [conta_2] Sincronização incremental a partir de 2026-04-07
+2026-04-08 13:10:57  INFO      [conta_2] Janela: 2026-04-07 ate 2026-04-08
+2026-04-08 13:10:58  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-08 13:10:59  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-08 13:10:59  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-08 13:10:59  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-08 13:11:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 13:11:10  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-08 13:11:10  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-08 13:11:11  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-08 13:11:11  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-08 13:11:12  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-08 13:11:12  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-08 13:11:12  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-08 13:11:13  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-08 13:11:13  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-08 13:11:14  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-08 13:11:14  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-08 13:11:14  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-08 13:11:15  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-08 13:11:15  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-08 13:11:16  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-08 13:11:16  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-08 13:11:17  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-08 13:11:17  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-08 13:11:17  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-08 13:11:18  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-08 13:11:18  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-08 13:11:19  INFO      [conta_2] Pagina 26: 100 pedidos (acumulado: 2600)
+2026-04-08 13:11:19  INFO      [conta_2] Pagina 27: 100 pedidos (acumulado: 2700)
+2026-04-08 13:11:19  INFO      [conta_2] Pagina 28: 100 pedidos (acumulado: 2800)
+2026-04-08 13:11:20  INFO      [conta_2] Pagina 29: 98 pedidos (acumulado: 2898)
+2026-04-08 13:11:20  INFO      [conta_2] 2026-04-07 ate 2026-04-08: 2898 pedidos importados
+2026-04-08 13:11:20  INFO      [conta_2] Total sincronizado: 2898 pedidos
+2026-04-08 13:11:20  INFO      Resumo [conta_2]: 2898 pedidos sincronizados
+2026-04-08 13:11:20  INFO      Total no banco [conta_2]: 79724 registros
+2026-04-08 13:11:20  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 359,135
+Com detalhe      : 355,340 (98.9%)
+Sem detalhe      : 3,795
+
+Exportando pedidos...
+  359,135 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  468,894 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  363,935 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-09 09:57:48  INFO      ============================================================
+2026-04-09 09:57:48  INFO      Conta: conta_1
+2026-04-09 09:57:48  INFO      ============================================================
+2026-04-09 09:57:48  INFO      [conta_1] Sincronização incremental a partir de 2026-04-07
+2026-04-09 09:57:48  INFO      [conta_1] Janela: 2026-04-07 ate 2026-04-09
+2026-04-09 09:57:48  INFO      Token expirado para 'conta_1'. Renovando...
+2026-04-09 09:57:49  INFO      Token renovado com sucesso para 'conta_1'.
+2026-04-09 09:57:56  ERROR     Erro inesperado durante a sincronização.
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_sync.py", line 98, in main
+    total = sync.sync_incremental()
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 60, in sync_incremental
+    return self._sync_range(start, date.today())
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 69, in _sync_range
+    count = self._sync_window(window_start.isoformat(), window_end.isoformat())
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 87, in _sync_window
+    self._db.upsert_pedidos(pedidos, self._account)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\db.py", line 81, in upsert_pedidos
+    self._conn.commit()
+    ~~~~~~~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+2026-04-09 09:59:54  INFO      ============================================================
+2026-04-09 09:59:54  INFO      Conta: conta_1
+2026-04-09 09:59:54  INFO      ============================================================
+2026-04-09 09:59:54  INFO      [conta_1] Sincronização incremental a partir de 2026-04-07
+2026-04-09 09:59:54  INFO      [conta_1] Janela: 2026-04-07 ate 2026-04-09
+2026-04-09 09:59:55  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 09:59:55  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 09:59:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:00:06  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 10:00:06  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 10:00:07  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 10:00:07  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 10:00:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:00:19  INFO      [conta_1] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 10:00:19  INFO      [conta_1] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 10:00:20  INFO      [conta_1] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 10:00:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:00:32  INFO      [conta_1] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 10:00:33  INFO      [conta_1] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 10:00:33  INFO      [conta_1] Pagina 12: 38 pedidos (acumulado: 1138)
+2026-04-09 10:00:33  INFO      [conta_1] 2026-04-07 ate 2026-04-09: 1138 pedidos importados
+2026-04-09 10:00:33  INFO      [conta_1] Total sincronizado: 1138 pedidos
+2026-04-09 10:00:33  INFO      Resumo [conta_1]: 1138 pedidos sincronizados
+2026-04-09 10:00:34  INFO      Total no banco [conta_1]: 279804 registros
+2026-04-09 10:00:34  INFO      ============================================================
+2026-04-09 10:00:34  INFO      Conta: conta_2
+2026-04-09 10:00:34  INFO      ============================================================
+2026-04-09 10:00:34  INFO      [conta_2] Sincronização incremental a partir de 2026-04-07
+2026-04-09 10:00:34  INFO      [conta_2] Janela: 2026-04-07 ate 2026-04-09
+2026-04-09 10:00:34  INFO      Token expirado para 'conta_2'. Renovando...
+2026-04-09 10:00:35  INFO      Token renovado com sucesso para 'conta_2'.
+2026-04-09 10:00:36  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 10:00:37  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 10:00:37  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 10:00:37  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 10:00:38  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 10:00:39  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 10:00:40  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 10:00:41  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 10:00:42  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 10:00:42  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 10:00:42  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 10:00:43  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-09 10:00:44  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-09 10:00:45  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-09 10:00:45  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-09 10:00:46  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-09 10:00:46  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-09 10:00:48  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-09 10:00:48  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-09 10:00:49  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-09 10:00:49  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-09 10:00:50  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-09 10:00:51  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-09 10:00:51  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-09 10:00:52  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-09 10:00:52  INFO      [conta_2] Pagina 26: 100 pedidos (acumulado: 2600)
+2026-04-09 10:00:53  INFO      [conta_2] Pagina 27: 100 pedidos (acumulado: 2700)
+2026-04-09 10:00:54  INFO      [conta_2] Pagina 28: 100 pedidos (acumulado: 2800)
+2026-04-09 10:00:54  INFO      [conta_2] Pagina 29: 100 pedidos (acumulado: 2900)
+2026-04-09 10:00:54  INFO      [conta_2] Pagina 30: 100 pedidos (acumulado: 3000)
+2026-04-09 10:00:55  INFO      [conta_2] Pagina 31: 100 pedidos (acumulado: 3100)
+2026-04-09 10:00:55  INFO      [conta_2] Pagina 32: 100 pedidos (acumulado: 3200)
+2026-04-09 10:00:56  INFO      [conta_2] Pagina 33: 100 pedidos (acumulado: 3300)
+2026-04-09 10:00:56  INFO      [conta_2] Pagina 34: 100 pedidos (acumulado: 3400)
+2026-04-09 10:00:57  INFO      [conta_2] Pagina 35: 100 pedidos (acumulado: 3500)
+2026-04-09 10:00:57  INFO      [conta_2] Pagina 36: 100 pedidos (acumulado: 3600)
+2026-04-09 10:00:58  INFO      [conta_2] Pagina 37: 100 pedidos (acumulado: 3700)
+2026-04-09 10:00:59  INFO      [conta_2] Pagina 38: 100 pedidos (acumulado: 3800)
+2026-04-09 10:01:00  INFO      [conta_2] Pagina 39: 100 pedidos (acumulado: 3900)
+2026-04-09 10:01:00  INFO      [conta_2] Pagina 40: 100 pedidos (acumulado: 4000)
+2026-04-09 10:01:01  INFO      [conta_2] Pagina 41: 100 pedidos (acumulado: 4100)
+2026-04-09 10:01:01  INFO      [conta_2] Pagina 42: 100 pedidos (acumulado: 4200)
+2026-04-09 10:01:02  INFO      [conta_2] Pagina 43: 100 pedidos (acumulado: 4300)
+2026-04-09 10:01:02  INFO      [conta_2] Pagina 44: 100 pedidos (acumulado: 4400)
+2026-04-09 10:01:03  INFO      [conta_2] Pagina 45: 100 pedidos (acumulado: 4500)
+2026-04-09 10:01:03  INFO      [conta_2] Pagina 46: 52 pedidos (acumulado: 4552)
+2026-04-09 10:01:03  INFO      [conta_2] 2026-04-07 ate 2026-04-09: 4552 pedidos importados
+2026-04-09 10:01:03  INFO      [conta_2] Total sincronizado: 4552 pedidos
+2026-04-09 10:01:03  INFO      Resumo [conta_2]: 4552 pedidos sincronizados
+2026-04-09 10:01:03  INFO      Total no banco [conta_2]: 81380 registros
+2026-04-09 10:01:03  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,184
+Com detalhe      : 355,404 (98.4%)
+Sem detalhe      : 5,780
+
+Exportando pedidos...
+  361,184 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  468,971 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  363,983 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-09 10:10:48  INFO      ============================================================
+2026-04-09 10:10:48  INFO      Conta: conta_1
+2026-04-09 10:10:48  INFO      ============================================================
+2026-04-09 10:10:48  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-09 10:10:48  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 10:10:49  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 10:10:50  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 10:10:50  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 10:10:50  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 10:10:51  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 10:10:51  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 10:10:52  INFO      [conta_1] Pagina 7: 45 pedidos (acumulado: 645)
+2026-04-09 10:10:52  INFO      [conta_1] 2026-04-08 ate 2026-04-09: 645 pedidos importados
+2026-04-09 10:10:52  INFO      [conta_1] Total sincronizado: 645 pedidos
+2026-04-09 10:10:52  INFO      Resumo [conta_1]: 645 pedidos sincronizados
+2026-04-09 10:10:53  INFO      Total no banco [conta_1]: 279811 registros
+2026-04-09 10:10:53  INFO      ============================================================
+2026-04-09 10:10:53  INFO      Conta: conta_2
+2026-04-09 10:10:53  INFO      ============================================================
+2026-04-09 10:10:53  INFO      [conta_2] Sincronização incremental a partir de 2026-04-08
+2026-04-09 10:10:53  INFO      [conta_2] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 10:10:54  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 10:10:55  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 10:10:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:11:05  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 10:11:06  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 10:11:06  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 10:11:07  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 10:11:07  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 10:11:07  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 10:11:08  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 10:11:08  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 10:11:09  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 10:11:09  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-09 10:11:10  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-09 10:11:10  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-09 10:11:10  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-09 10:11:11  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-09 10:11:11  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-09 10:11:12  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-09 10:11:12  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-09 10:11:13  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-09 10:11:13  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-09 10:11:14  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-09 10:11:14  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-09 10:11:14  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-09 10:11:15  INFO      [conta_2] Pagina 25: 26 pedidos (acumulado: 2426)
+2026-04-09 10:11:15  INFO      [conta_2] 2026-04-08 ate 2026-04-09: 2426 pedidos importados
+2026-04-09 10:11:15  INFO      [conta_2] Total sincronizado: 2426 pedidos
+2026-04-09 10:11:15  INFO      Resumo [conta_2]: 2426 pedidos sincronizados
+2026-04-09 10:11:15  INFO      Total no banco [conta_2]: 81401 registros
+2026-04-09 10:11:15  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,212
+Com detalhe      : 355,404 (98.4%)
+Sem detalhe      : 5,808
+
+Exportando pedidos...
+  361,212 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  468,903 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  363,940 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-09 11:10:56  INFO      ============================================================
+2026-04-09 11:10:56  INFO      Conta: conta_1
+2026-04-09 11:10:56  INFO      ============================================================
+2026-04-09 11:10:56  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-09 11:10:56  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 11:10:57  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 11:10:58  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 11:10:58  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 11:10:59  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 11:10:59  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 11:11:00  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 11:11:00  INFO      [conta_1] Pagina 7: 77 pedidos (acumulado: 677)
+2026-04-09 11:11:00  INFO      [conta_1] 2026-04-08 ate 2026-04-09: 677 pedidos importados
+2026-04-09 11:11:00  INFO      [conta_1] Total sincronizado: 677 pedidos
+2026-04-09 11:11:00  INFO      Resumo [conta_1]: 677 pedidos sincronizados
+2026-04-09 11:11:01  INFO      Total no banco [conta_1]: 279843 registros
+2026-04-09 11:11:01  INFO      ============================================================
+2026-04-09 11:11:01  INFO      Conta: conta_2
+2026-04-09 11:11:01  INFO      ============================================================
+2026-04-09 11:11:01  INFO      [conta_2] Sincronização incremental a partir de 2026-04-08
+2026-04-09 11:11:01  INFO      [conta_2] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 11:11:02  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 11:11:02  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 11:11:03  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 11:11:03  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 11:11:04  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 11:11:04  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 11:11:05  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 11:11:05  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 11:11:05  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 11:11:06  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 11:11:06  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 11:11:07  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-09 11:11:07  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-09 11:11:08  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-09 11:11:08  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-09 11:11:09  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-09 11:11:09  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-09 11:11:09  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-09 11:11:10  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-09 11:11:10  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-09 11:11:11  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-09 11:11:11  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-09 11:11:12  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-09 11:11:12  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-09 11:11:13  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-09 11:11:13  INFO      [conta_2] Pagina 26: 42 pedidos (acumulado: 2542)
+2026-04-09 11:11:13  INFO      [conta_2] 2026-04-08 ate 2026-04-09: 2542 pedidos importados
+2026-04-09 11:11:13  INFO      [conta_2] Total sincronizado: 2542 pedidos
+2026-04-09 11:11:13  INFO      Resumo [conta_2]: 2542 pedidos sincronizados
+2026-04-09 11:11:13  INFO      Total no banco [conta_2]: 81517 registros
+2026-04-09 11:11:13  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,360
+Com detalhe      : 356,962 (98.8%)
+Sem detalhe      : 4,398
+
+Exportando pedidos...
+  361,360 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  470,331 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  364,778 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-09 12:10:47  INFO      ============================================================
+2026-04-09 12:10:47  INFO      Conta: conta_1
+2026-04-09 12:10:47  INFO      ============================================================
+2026-04-09 12:10:47  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-09 12:10:47  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 12:10:48  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 12:10:53  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 12:10:54  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 12:10:54  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 12:10:56  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 12:10:56  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 12:11:07  INFO      [conta_1] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 12:11:17  INFO      [conta_1] Pagina 8: 11 pedidos (acumulado: 711)
+2026-04-09 12:11:17  INFO      [conta_1] 2026-04-08 ate 2026-04-09: 711 pedidos importados
+2026-04-09 12:11:17  INFO      [conta_1] Total sincronizado: 711 pedidos
+2026-04-09 12:11:17  INFO      Resumo [conta_1]: 711 pedidos sincronizados
+2026-04-09 12:11:17  INFO      Total no banco [conta_1]: 279877 registros
+2026-04-09 12:11:17  INFO      ============================================================
+2026-04-09 12:11:17  INFO      Conta: conta_2
+2026-04-09 12:11:17  INFO      ============================================================
+2026-04-09 12:11:17  INFO      [conta_2] Sincronização incremental a partir de 2026-04-08
+2026-04-09 12:11:17  INFO      [conta_2] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 12:11:18  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 12:11:19  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 12:11:19  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 12:11:20  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 12:11:20  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 12:11:20  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 12:11:21  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 12:11:21  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 12:11:22  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 12:11:22  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 12:11:22  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 12:11:23  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-09 12:11:23  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-09 12:11:24  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-09 12:11:24  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-09 12:11:25  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-09 12:11:25  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-09 12:11:25  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-09 12:11:26  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-09 12:11:26  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-09 12:11:27  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-09 12:11:27  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-09 12:11:27  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-09 12:11:28  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-09 12:11:28  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-09 12:11:29  INFO      [conta_2] Pagina 26: 100 pedidos (acumulado: 2600)
+2026-04-09 12:11:29  INFO      [conta_2] Pagina 27: 35 pedidos (acumulado: 2635)
+2026-04-09 12:11:29  INFO      [conta_2] 2026-04-08 ate 2026-04-09: 2635 pedidos importados
+2026-04-09 12:11:29  INFO      [conta_2] Total sincronizado: 2635 pedidos
+2026-04-09 12:11:29  INFO      Resumo [conta_2]: 2635 pedidos sincronizados
+2026-04-09 12:11:29  INFO      Total no banco [conta_2]: 81610 registros
+2026-04-09 12:11:29  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,487
+Com detalhe      : 357,336 (98.9%)
+Sem detalhe      : 4,151
+
+Exportando pedidos...
+  361,487 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  470,331 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  364,778 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-09 13:10:47  INFO      ============================================================
+2026-04-09 13:10:47  INFO      Conta: conta_1
+2026-04-09 13:10:47  INFO      ============================================================
+2026-04-09 13:10:47  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-09 13:10:47  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 13:10:48  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 13:10:48  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 13:10:49  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 13:10:49  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 13:10:50  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 13:10:50  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 13:10:50  INFO      [conta_1] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 13:10:51  INFO      [conta_1] Pagina 8: 35 pedidos (acumulado: 735)
+2026-04-09 13:10:51  INFO      [conta_1] 2026-04-08 ate 2026-04-09: 735 pedidos importados
+2026-04-09 13:10:51  INFO      [conta_1] Total sincronizado: 735 pedidos
+2026-04-09 13:10:51  INFO      Resumo [conta_1]: 735 pedidos sincronizados
+2026-04-09 13:10:51  INFO      Total no banco [conta_1]: 279901 registros
+2026-04-09 13:10:51  INFO      ============================================================
+2026-04-09 13:10:51  INFO      Conta: conta_2
+2026-04-09 13:10:51  INFO      ============================================================
+2026-04-09 13:10:51  INFO      [conta_2] Sincronização incremental a partir de 2026-04-08
+2026-04-09 13:10:51  INFO      [conta_2] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 13:10:52  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 13:10:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:03  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 13:11:03  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 13:11:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:13  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 13:11:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:24  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 13:11:24  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 13:11:25  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:35  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 13:11:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:46  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 13:11:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:56  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 13:11:57  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 13:11:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:07  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 13:12:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:18  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-09 13:12:18  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-09 13:12:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:29  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-09 13:12:29  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-09 13:12:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:40  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-09 13:12:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:50  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-09 13:12:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:01  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-09 13:13:01  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-09 13:13:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:12  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-09 13:13:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:23  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-09 13:13:23  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-09 13:13:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:34  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-09 13:13:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:44  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-09 13:13:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:55  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-09 13:13:55  INFO      [conta_2] Pagina 26: 100 pedidos (acumulado: 2600)
+2026-04-09 13:13:56  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:14:06  INFO      [conta_2] Pagina 27: 100 pedidos (acumulado: 2700)
+2026-04-09 13:14:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:14:17  INFO      [conta_2] Pagina 28: 79 pedidos (acumulado: 2779)
+2026-04-09 13:14:17  INFO      [conta_2] 2026-04-08 ate 2026-04-09: 2779 pedidos importados
+2026-04-09 13:14:17  INFO      [conta_2] Total sincronizado: 2779 pedidos
+2026-04-09 13:14:17  INFO      Resumo [conta_2]: 2779 pedidos sincronizados
+2026-04-09 13:14:17  INFO      Total no banco [conta_2]: 81743 registros
+2026-04-09 13:14:17  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,644
+Com detalhe      : 360,965 (99.8%)
+Sem detalhe      : 679
+
+Exportando pedidos...
+  361,644 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py", line 235, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py", line 219, in main
+    df_itens = exportar_itens(conn)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py", line 125, in exportar_itens
+    rows = conn.execute("""
+           ~~~~~~~~~~~~^^^^
+        SELECT id, conta, data, payload
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        FROM pedidos
+        ^^^^^^^^^^^^
+        WHERE detalhado = 1 AND payload LIKE '%"itens"%'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    """).fetchall()
+    ^^^^
+sqlite3.OperationalError: database is locked
+2026-04-09 14:10:47  INFO      ============================================================
+2026-04-09 14:10:47  INFO      Conta: conta_1
+2026-04-09 14:10:47  INFO      ============================================================
+2026-04-09 14:10:47  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-09 14:10:47  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 14:10:48  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 14:10:48  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 14:10:49  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 14:10:49  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 14:10:50  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 14:10:50  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 14:10:50  INFO      [conta_1] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 14:10:51  INFO      [conta_1] Pagina 8: 63 pedidos (acumulado: 763)
+2026-04-09 14:10:51  INFO      [conta_1] 2026-04-08 ate 2026-04-09: 763 pedidos importados
+2026-04-09 14:10:51  INFO      [conta_1] Total sincronizado: 763 pedidos
+2026-04-09 14:10:51  INFO      Resumo [conta_1]: 763 pedidos sincronizados
+2026-04-09 14:10:51  INFO      Total no banco [conta_1]: 279929 registros
+2026-04-09 14:10:51  INFO      ============================================================
+2026-04-09 14:10:51  INFO      Conta: conta_2
+2026-04-09 14:10:51  INFO      ============================================================
+2026-04-09 14:10:51  INFO      [conta_2] Sincronização incremental a partir de 2026-04-08
+2026-04-09 14:10:51  INFO      [conta_2] Janela: 2026-04-08 ate 2026-04-09
+2026-04-09 14:10:52  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-09 14:10:52  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-09 14:10:53  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-09 14:10:53  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-09 14:10:54  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-09 14:10:54  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-09 14:10:54  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-09 14:10:55  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-09 14:10:55  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-09 14:10:56  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-09 14:10:56  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-09 14:10:57  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-09 14:10:57  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-09 14:10:57  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-09 14:10:58  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-09 14:10:58  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-09 14:10:59  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-09 14:10:59  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-09 14:10:59  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-09 14:11:00  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-09 14:11:00  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-09 14:11:01  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-09 14:11:01  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-09 14:11:02  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-09 14:11:02  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-09 14:11:02  INFO      [conta_2] Pagina 26: 100 pedidos (acumulado: 2600)
+2026-04-09 14:11:03  INFO      [conta_2] Pagina 27: 100 pedidos (acumulado: 2700)
+2026-04-09 14:11:03  INFO      [conta_2] Pagina 28: 100 pedidos (acumulado: 2800)
+2026-04-09 14:11:04  INFO      [conta_2] Pagina 29: 100 pedidos (acumulado: 2900)
+2026-04-09 14:11:04  INFO      [conta_2] Pagina 30: 8 pedidos (acumulado: 2908)
+2026-04-09 14:11:04  INFO      [conta_2] 2026-04-08 ate 2026-04-09: 2908 pedidos importados
+2026-04-09 14:11:04  INFO      [conta_2] Total sincronizado: 2908 pedidos
+2026-04-09 14:11:04  INFO      Resumo [conta_2]: 2908 pedidos sincronizados
+2026-04-09 14:11:04  INFO      Total no banco [conta_2]: 81883 registros
+2026-04-09 14:11:04  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,812
+Com detalhe      : 361,644 (100.0%)
+Sem detalhe      : 168
+
+Exportando pedidos...
+  361,812 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  473,101 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  366,909 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-13 07:47:31  INFO      ============================================================
+2026-04-13 07:47:31  INFO      Conta: conta_1
+2026-04-13 07:47:31  INFO      ============================================================
+2026-04-13 07:47:31  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-13 07:47:31  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-13
+2026-04-13 07:47:31  INFO      Token expirado para 'conta_1'. Renovando...
+2026-04-13 07:47:32  INFO      Token renovado com sucesso para 'conta_1'.
+2026-04-13 07:47:39  ERROR     Erro inesperado durante a sincronização.
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_sync.py", line 98, in main
+    total = sync.sync_incremental()
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 60, in sync_incremental
+    return self._sync_range(start, date.today())
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 69, in _sync_range
+    count = self._sync_window(window_start.isoformat(), window_end.isoformat())
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 87, in _sync_window
+    self._db.upsert_pedidos(pedidos, self._account)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\db.py", line 81, in upsert_pedidos
+    self._conn.commit()
+    ~~~~~~~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 361,812
+Com detalhe      : 361,812 (100.0%)
+Sem detalhe      : 0
+
+Exportando pedidos...
+  361,812 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  473,336 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  367,077 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-13 08:10:57  INFO      ============================================================
+2026-04-13 08:10:57  INFO      Conta: conta_1
+2026-04-13 08:10:57  INFO      ============================================================
+2026-04-13 08:10:57  INFO      [conta_1] Sincronização incremental a partir de 2026-04-08
+2026-04-13 08:10:57  INFO      [conta_1] Janela: 2026-04-08 ate 2026-04-13
+2026-04-13 08:10:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:11:09  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-13 08:11:09  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-13 08:11:10  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-13 08:11:11  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-13 08:11:12  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-13 08:11:12  INFO      [conta_1] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-13 08:11:13  INFO      [conta_1] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-13 08:11:14  INFO      [conta_1] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-13 08:11:14  INFO      [conta_1] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-13 08:11:15  INFO      [conta_1] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-13 08:11:15  INFO      [conta_1] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-13 08:11:15  INFO      [conta_1] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-13 08:11:16  INFO      [conta_1] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-13 08:11:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:11:26  INFO      [conta_1] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-13 08:11:27  INFO      [conta_1] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-13 08:11:27  INFO      [conta_1] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-13 08:11:28  INFO      [conta_1] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-13 08:11:28  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:11:39  INFO      [conta_1] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-13 08:11:39  INFO      [conta_1] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-13 08:11:40  INFO      [conta_1] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-13 08:11:40  INFO      [conta_1] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-13 08:11:41  INFO      [conta_1] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-13 08:11:41  INFO      [conta_1] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-13 08:11:42  INFO      [conta_1] Pagina 24: 30 pedidos (acumulado: 2330)
+2026-04-13 08:11:42  INFO      [conta_1] 2026-04-08 ate 2026-04-13: 2330 pedidos importados
+2026-04-13 08:11:42  INFO      [conta_1] Total sincronizado: 2330 pedidos
+2026-04-13 08:11:42  INFO      Resumo [conta_1]: 2330 pedidos sincronizados
+2026-04-13 08:11:43  INFO      Total no banco [conta_1]: 281496 registros
+2026-04-13 08:11:43  INFO      ============================================================
+2026-04-13 08:11:43  INFO      Conta: conta_2
+2026-04-13 08:11:43  INFO      ============================================================
+2026-04-13 08:11:43  INFO      [conta_2] Sincronização incremental a partir de 2026-04-08
+2026-04-13 08:11:43  INFO      [conta_2] Janela: 2026-04-08 ate 2026-04-13
+2026-04-13 08:11:43  INFO      Token expirado para 'conta_2'. Renovando...
+2026-04-13 08:11:44  INFO      Token renovado com sucesso para 'conta_2'.
+2026-04-13 08:11:46  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-13 08:11:46  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-13 08:11:47  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-13 08:11:48  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-13 08:11:48  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-13 08:11:49  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-13 08:11:49  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-13 08:11:50  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-13 08:11:51  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-13 08:11:51  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-13 08:11:52  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-13 08:11:52  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-13 08:11:53  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-13 08:11:53  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-13 08:11:54  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-13 08:11:54  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-13 08:11:55  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-13 08:11:55  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-13 08:11:56  INFO      [conta_2] Pagina 19: 100 pedidos (acumulado: 1900)
+2026-04-13 08:11:56  INFO      [conta_2] Pagina 20: 100 pedidos (acumulado: 2000)
+2026-04-13 08:11:56  INFO      [conta_2] Pagina 21: 100 pedidos (acumulado: 2100)
+2026-04-13 08:11:57  INFO      [conta_2] Pagina 22: 100 pedidos (acumulado: 2200)
+2026-04-13 08:11:57  INFO      [conta_2] Pagina 23: 100 pedidos (acumulado: 2300)
+2026-04-13 08:11:58  INFO      [conta_2] Pagina 24: 100 pedidos (acumulado: 2400)
+2026-04-13 08:11:58  INFO      [conta_2] Pagina 25: 100 pedidos (acumulado: 2500)
+2026-04-13 08:11:59  INFO      [conta_2] Pagina 26: 100 pedidos (acumulado: 2600)
+2026-04-13 08:11:59  INFO      [conta_2] Pagina 27: 100 pedidos (acumulado: 2700)
+2026-04-13 08:11:59  INFO      [conta_2] Pagina 28: 100 pedidos (acumulado: 2800)
+2026-04-13 08:12:00  INFO      [conta_2] Pagina 29: 100 pedidos (acumulado: 2900)
+2026-04-13 08:12:01  INFO      [conta_2] Pagina 30: 100 pedidos (acumulado: 3000)
+2026-04-13 08:12:01  INFO      [conta_2] Pagina 31: 100 pedidos (acumulado: 3100)
+2026-04-13 08:12:02  INFO      [conta_2] Pagina 32: 100 pedidos (acumulado: 3200)
+2026-04-13 08:12:02  INFO      [conta_2] Pagina 33: 100 pedidos (acumulado: 3300)
+2026-04-13 08:12:03  INFO      [conta_2] Pagina 34: 100 pedidos (acumulado: 3400)
+2026-04-13 08:12:03  INFO      [conta_2] Pagina 35: 100 pedidos (acumulado: 3500)
+2026-04-13 08:12:04  INFO      [conta_2] Pagina 36: 100 pedidos (acumulado: 3600)
+2026-04-13 08:12:04  INFO      [conta_2] Pagina 37: 100 pedidos (acumulado: 3700)
+2026-04-13 08:12:04  INFO      [conta_2] Pagina 38: 100 pedidos (acumulado: 3800)
+2026-04-13 08:12:05  INFO      [conta_2] Pagina 39: 100 pedidos (acumulado: 3900)
+2026-04-13 08:12:05  INFO      [conta_2] Pagina 40: 100 pedidos (acumulado: 4000)
+2026-04-13 08:12:06  INFO      [conta_2] Pagina 41: 100 pedidos (acumulado: 4100)
+2026-04-13 08:12:06  INFO      [conta_2] Pagina 42: 100 pedidos (acumulado: 4200)
+2026-04-13 08:12:07  INFO      [conta_2] Pagina 43: 100 pedidos (acumulado: 4300)
+2026-04-13 08:12:07  INFO      [conta_2] Pagina 44: 100 pedidos (acumulado: 4400)
+2026-04-13 08:12:08  INFO      [conta_2] Pagina 45: 100 pedidos (acumulado: 4500)
+2026-04-13 08:12:08  INFO      [conta_2] Pagina 46: 100 pedidos (acumulado: 4600)
+2026-04-13 08:12:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:12:19  INFO      [conta_2] Pagina 47: 100 pedidos (acumulado: 4700)
+2026-04-13 08:12:19  INFO      [conta_2] Pagina 48: 100 pedidos (acumulado: 4800)
+2026-04-13 08:12:20  INFO      [conta_2] Pagina 49: 100 pedidos (acumulado: 4900)
+2026-04-13 08:12:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:12:34  INFO      [conta_2] Pagina 50: 100 pedidos (acumulado: 5000)
+2026-04-13 08:12:36  INFO      [conta_2] Pagina 51: 100 pedidos (acumulado: 5100)
+2026-04-13 08:12:36  INFO      [conta_2] Pagina 52: 100 pedidos (acumulado: 5200)
+2026-04-13 08:12:37  INFO      [conta_2] Pagina 53: 100 pedidos (acumulado: 5300)
+2026-04-13 08:12:38  INFO      [conta_2] Pagina 54: 100 pedidos (acumulado: 5400)
+2026-04-13 08:12:38  INFO      [conta_2] Pagina 55: 100 pedidos (acumulado: 5500)
+2026-04-13 08:12:38  INFO      [conta_2] Pagina 56: 100 pedidos (acumulado: 5600)
+2026-04-13 08:12:39  INFO      [conta_2] Pagina 57: 100 pedidos (acumulado: 5700)
+2026-04-13 08:12:39  INFO      [conta_2] Pagina 58: 100 pedidos (acumulado: 5800)
+2026-04-13 08:12:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:12:50  INFO      [conta_2] Pagina 59: 100 pedidos (acumulado: 5900)
+2026-04-13 08:12:51  INFO      [conta_2] Pagina 60: 100 pedidos (acumulado: 6000)
+2026-04-13 08:12:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:13:01  INFO      [conta_2] Pagina 61: 100 pedidos (acumulado: 6100)
+2026-04-13 08:13:02  INFO      [conta_2] Pagina 62: 100 pedidos (acumulado: 6200)
+2026-04-13 08:13:02  INFO      [conta_2] Pagina 63: 100 pedidos (acumulado: 6300)
+2026-04-13 08:13:03  INFO      [conta_2] Pagina 64: 100 pedidos (acumulado: 6400)
+2026-04-13 08:13:03  INFO      [conta_2] Pagina 65: 100 pedidos (acumulado: 6500)
+2026-04-13 08:13:04  INFO      [conta_2] Pagina 66: 100 pedidos (acumulado: 6600)
+2026-04-13 08:13:05  INFO      [conta_2] Pagina 67: 100 pedidos (acumulado: 6700)
+2026-04-13 08:13:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:13:15  INFO      [conta_2] Pagina 68: 100 pedidos (acumulado: 6800)
+2026-04-13 08:13:16  INFO      [conta_2] Pagina 69: 100 pedidos (acumulado: 6900)
+2026-04-13 08:13:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:13:26  INFO      [conta_2] Pagina 70: 100 pedidos (acumulado: 7000)
+2026-04-13 08:13:27  INFO      [conta_2] Pagina 71: 100 pedidos (acumulado: 7100)
+2026-04-13 08:13:27  INFO      [conta_2] Pagina 72: 100 pedidos (acumulado: 7200)
+2026-04-13 08:13:28  INFO      [conta_2] Pagina 73: 100 pedidos (acumulado: 7300)
+2026-04-13 08:13:28  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:13:39  INFO      [conta_2] Pagina 74: 100 pedidos (acumulado: 7400)
+2026-04-13 08:13:39  INFO      [conta_2] Pagina 75: 100 pedidos (acumulado: 7500)
+2026-04-13 08:13:40  INFO      [conta_2] Pagina 76: 100 pedidos (acumulado: 7600)
+2026-04-13 08:13:40  INFO      [conta_2] Pagina 77: 100 pedidos (acumulado: 7700)
+2026-04-13 08:13:41  INFO      [conta_2] Pagina 78: 100 pedidos (acumulado: 7800)
+2026-04-13 08:13:42  INFO      [conta_2] Pagina 79: 100 pedidos (acumulado: 7900)
+2026-04-13 08:13:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:13:52  INFO      [conta_2] Pagina 80: 100 pedidos (acumulado: 8000)
+2026-04-13 08:13:53  INFO      [conta_2] Pagina 81: 100 pedidos (acumulado: 8100)
+2026-04-13 08:13:54  INFO      [conta_2] Pagina 82: 100 pedidos (acumulado: 8200)
+2026-04-13 08:13:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:14:06  INFO      [conta_2] Pagina 83: 100 pedidos (acumulado: 8300)
+2026-04-13 08:14:09  INFO      [conta_2] Pagina 84: 100 pedidos (acumulado: 8400)
+2026-04-13 08:14:10  INFO      [conta_2] Pagina 85: 100 pedidos (acumulado: 8500)
+2026-04-13 08:14:10  INFO      [conta_2] Pagina 86: 100 pedidos (acumulado: 8600)
+2026-04-13 08:14:11  INFO      [conta_2] Pagina 87: 100 pedidos (acumulado: 8700)
+2026-04-13 08:14:12  INFO      [conta_2] Pagina 88: 100 pedidos (acumulado: 8800)
+2026-04-13 08:14:12  INFO      [conta_2] Pagina 89: 78 pedidos (acumulado: 8878)
+2026-04-13 08:14:12  INFO      [conta_2] 2026-04-08 ate 2026-04-13: 8878 pedidos importados
+2026-04-13 08:14:12  INFO      [conta_2] Total sincronizado: 8878 pedidos
+2026-04-13 08:14:12  INFO      Resumo [conta_2]: 8878 pedidos sincronizados
+2026-04-13 08:14:13  INFO      Total no banco [conta_2]: 87850 registros
+2026-04-13 08:14:13  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 369,346
+Com detalhe      : 361,812 (98.0%)
+Sem detalhe      : 7,534
+
+Exportando pedidos...
+  369,346 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  473,101 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  366,909 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-13 09:10:49  INFO      ============================================================
+2026-04-13 09:10:49  INFO      Conta: conta_1
+2026-04-13 09:10:49  INFO      ============================================================
+2026-04-13 09:10:49  INFO      [conta_1] Sincronização incremental a partir de 2026-04-12
+2026-04-13 09:10:49  INFO      [conta_1] Janela: 2026-04-12 ate 2026-04-13
+2026-04-13 09:10:51  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-13 09:10:51  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-13 09:10:51  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-13 09:10:52  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-13 09:10:52  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-13 09:10:53  INFO      [conta_1] Pagina 6: 31 pedidos (acumulado: 531)
+2026-04-13 09:10:53  INFO      [conta_1] 2026-04-12 ate 2026-04-13: 531 pedidos importados
+2026-04-13 09:10:53  INFO      [conta_1] Total sincronizado: 531 pedidos
+2026-04-13 09:10:53  INFO      Resumo [conta_1]: 531 pedidos sincronizados
+2026-04-13 09:10:53  INFO      Total no banco [conta_1]: 281513 registros
+2026-04-13 09:10:53  INFO      ============================================================
+2026-04-13 09:10:53  INFO      Conta: conta_2
+2026-04-13 09:10:53  INFO      ============================================================
+2026-04-13 09:10:54  INFO      [conta_2] Sincronização incremental a partir de 2026-04-12
+2026-04-13 09:10:54  INFO      [conta_2] Janela: 2026-04-12 ate 2026-04-13
+2026-04-13 09:10:55  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-13 09:10:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:11:06  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-13 09:11:06  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-13 09:11:07  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-13 09:11:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:11:17  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-13 09:11:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:11:28  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-13 09:11:28  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-13 09:11:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:11:39  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-13 09:11:39  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-13 09:11:40  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-13 09:11:41  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-13 09:11:45  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-13 09:11:45  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-13 09:11:46  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-13 09:11:46  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-13 09:11:46  INFO      [conta_2] Pagina 16: 98 pedidos (acumulado: 1598)
+2026-04-13 09:11:46  INFO      [conta_2] 2026-04-12 ate 2026-04-13: 1598 pedidos importados
+2026-04-13 09:11:46  INFO      [conta_2] Total sincronizado: 1598 pedidos
+2026-04-13 09:11:46  INFO      Resumo [conta_2]: 1598 pedidos sincronizados
+2026-04-13 09:11:47  INFO      Total no banco [conta_2]: 87935 registros
+2026-04-13 09:11:47  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
+
+Pedidos no banco : 369,448
+Com detalhe      : 362,644 (98.2%)
+Sem detalhe      : 6,804
+
+Exportando pedidos...
+  369,448 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\pedidos.parquet
+Exportando itens...
+  473,616 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\itens.parquet
+Exportando parcelas...
+  367,232 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
+
+Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-13 10:10:49  INFO      ============================================================
+2026-04-13 10:10:49  INFO      Conta: conta_1
+2026-04-13 10:10:49  INFO      ============================================================
+2026-04-13 10:10:49  INFO      [conta_1] Sincronização incremental a partir de 2026-04-12
+2026-04-13 10:10:49  INFO      [conta_1] Janela: 2026-04-12 ate 2026-04-13
+2026-04-13 10:10:50  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-13 10:10:51  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-13 10:10:51  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-13 10:11:04  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-13 10:11:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:15  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-13 10:11:16  INFO      [conta_1] Pagina 6: 67 pedidos (acumulado: 567)
+2026-04-13 10:11:16  INFO      [conta_1] 2026-04-12 ate 2026-04-13: 567 pedidos importados
+2026-04-13 10:11:16  INFO      [conta_1] Total sincronizado: 567 pedidos
+2026-04-13 10:11:16  INFO      Resumo [conta_1]: 567 pedidos sincronizados
+2026-04-13 10:11:16  INFO      Total no banco [conta_1]: 281549 registros
+2026-04-13 10:11:16  INFO      ============================================================
+2026-04-13 10:11:16  INFO      Conta: conta_2
+2026-04-13 10:11:16  INFO      ============================================================
+2026-04-13 10:11:16  INFO      [conta_2] Sincronização incremental a partir de 2026-04-12
+2026-04-13 10:11:16  INFO      [conta_2] Janela: 2026-04-12 ate 2026-04-13
+2026-04-13 10:11:17  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-13 10:11:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:28  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 10:11:48  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-13 10:11:49  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-13 10:11:49  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-13 10:11:49  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-13 10:11:50  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:12:00  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-13 10:12:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:12:11  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-13 10:12:11  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-13 10:12:12  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-13 10:12:12  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-13 10:12:13  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-13 10:12:15  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-13 10:12:15  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-13 10:12:16  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-13 10:12:16  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-13 10:12:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:12:28  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-13 10:12:28  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-13 10:12:29  INFO      [conta_2] Pagina 18: 100 pedidos (acumulado: 1800)
+2026-04-13 10:12:29  INFO      [conta_2] Pagina 19: 42 pedidos (acumulado: 1842)
+2026-04-13 10:12:29  INFO      [conta_2] 2026-04-12 ate 2026-04-13: 1842 pedidos importados
+2026-04-13 10:12:29  INFO      [conta_2] Total sincronizado: 1842 pedidos
+2026-04-13 10:12:29  INFO      Resumo [conta_2]: 1842 pedidos sincronizados
+2026-04-13 10:12:30  INFO      Total no banco [conta_2]: 88179 registros
+2026-04-13 10:12:30  INFO      Sincronização concluída.
+
+Pedidos no banco : 369,728
+Com detalhe      : 363,704 (98.4%)
+Sem detalhe      : 6,024
+
+Exportando pedidos...
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py", line 235, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py", line 213, in main
+    df_pedidos = exportar_pedidos(conn)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py", line 22, in exportar_pedidos
+    rows = conn.execute("""
+           ~~~~~~~~~~~~^^^^
+        SELECT id, conta, numero, data, data_saida, payload, synced_at
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        FROM pedidos
+        ^^^^^^^^^^^^
+        ORDER BY data DESC
+        ^^^^^^^^^^^^^^^^^^
+    """).fetchall()
+    ^^^^
+sqlite3.OperationalError: database is locked

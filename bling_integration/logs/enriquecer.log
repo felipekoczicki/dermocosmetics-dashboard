@@ -70,3 +70,652 @@ Traceback (most recent call last):
   File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
     raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
 RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25488873452
+2026-04-08 12:40:47  INFO      ============================================================
+2026-04-08 12:40:47  INFO      Enriquecimento de pedidos — inicio
+2026-04-08 12:40:47  INFO      ============================================================
+2026-04-08 12:43:01  INFO      [conta_1] [#############################-] 277,707/279,352 (99.4%)
+2026-04-08 12:43:01  INFO      [conta_2] [#############################-] 76,828/77,426 (99.2%)
+2026-04-08 12:43:03  INFO      [conta_1] 1,645 pedidos para enriquecer.
+2026-04-08 12:43:04  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:45:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:45:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:45:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:45:58  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-08 12:47:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:47:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:47:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:47:51  INFO      [conta_1] 500/1,645 enriquecidos | 6205/h | ETA: 0.2h
+2026-04-08 12:48:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:48:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:49:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:50:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:50:28  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-08 12:50:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-08 12:50:59  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-08 12:51:19  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-08 12:51:49  INFO      ============================================================
+2026-04-08 12:51:49  INFO      Total enriquecidos nesta execucao: 805
+2026-04-08 12:51:51  INFO      [conta_1] [#############################-] 278,512/279,352 (99.7%)
+2026-04-08 12:51:51  INFO      [conta_2] [#############################-] 76,828/77,426 (99.2%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 53, in enriquecer_pedido
+    resp = client.get_pedido(pedido_id)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 95, in get_pedido
+    return self.get(f"/pedidos/vendas/{pedido_id}")
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25476165554
+2026-04-09 09:57:48  INFO      ============================================================
+2026-04-09 09:57:48  INFO      Enriquecimento de pedidos — inicio
+2026-04-09 09:57:48  INFO      ============================================================
+2026-04-09 09:59:34  INFO      [conta_1] [#############################-] 278,512/279,411 (99.7%)
+2026-04-09 09:59:34  INFO      [conta_2] [############################--] 76,828/79,724 (96.4%)
+2026-04-09 09:59:39  INFO      [conta_1] 899 pedidos para enriquecer.
+2026-04-09 09:59:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 09:59:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:00:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:00:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:00:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:01:11  INFO      ============================================================
+2026-04-09 10:01:11  INFO      Total enriquecidos nesta execucao: 63
+2026-04-09 10:01:32  INFO      [conta_1] [#############################-] 278,577/279,804 (99.6%)
+2026-04-09 10:01:32  INFO      [conta_2] [############################--] 76,828/81,380 (94.4%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 62, in enriquecer_pedido
+    conn.commit()
+    ~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+2026-04-09 10:40:49  INFO      ============================================================
+2026-04-09 10:40:49  INFO      Enriquecimento de pedidos — inicio
+2026-04-09 10:40:49  INFO      ============================================================
+2026-04-09 10:42:27  INFO      [conta_1] [#############################-] 278,576/279,811 (99.6%)
+2026-04-09 10:42:27  INFO      [conta_2] [############################--] 76,828/81,401 (94.4%)
+2026-04-09 10:42:28  INFO      [conta_1] 1,235 pedidos para enriquecer.
+2026-04-09 10:45:04  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:45:15  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:45:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:45:58  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:46:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:46:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:46:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:46:53  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:47:04  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:47:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:47:30  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:47:41  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:47:51  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 10:48:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:48:33  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:48:43  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 10:49:04  INFO      [conta_1] 500/1,235 enriquecidos | 4527/h | ETA: 0.2h
+2026-04-09 10:49:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:49:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:50:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:50:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:50:27  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 10:50:50  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:51:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:51:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:51:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:51:37  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 10:52:04  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:52:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:52:25  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:52:36  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:52:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:52:58  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:53:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:53:19  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 10:53:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:56:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:56:12  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 10:56:55  INFO      [conta_1] 1,000/1,235 enriquecidos | 4145/h | ETA: 0.1h
+2026-04-09 10:58:31  INFO      [conta_1] Concluido nesta execucao.
+2026-04-09 10:58:42  INFO      [conta_2] 4,573 pedidos para enriquecer.
+2026-04-09 10:58:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:59:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:59:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 10:59:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:00:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:00:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:00:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:00:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:01:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:01:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:01:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:02:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:02:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:02:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:02:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:03:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:03:22  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:03:41  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:03:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:04:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:04:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:04:30  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:04:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:04:53  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:05:03  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:05:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:05:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:05:44  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:06:05  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-09 11:06:35  INFO      ============================================================
+2026-04-09 11:06:35  INFO      Total enriquecidos nesta execucao: 1,558
+2026-04-09 11:09:00  INFO      [conta_1] [##############################] 279,811/279,811 (100.0%)
+2026-04-09 11:09:00  INFO      [conta_2] [############################--] 77,151/81,401 (94.8%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 53, in enriquecer_pedido
+    resp = client.get_pedido(pedido_id)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 95, in get_pedido
+    return self.get(f"/pedidos/vendas/{pedido_id}")
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25521378124
+2026-04-09 11:40:48  INFO      ============================================================
+2026-04-09 11:40:48  INFO      Enriquecimento de pedidos — inicio
+2026-04-09 11:40:48  INFO      ============================================================
+2026-04-09 11:42:20  INFO      [conta_1] [#############################-] 279,811/279,843 (100.0%)
+2026-04-09 11:42:20  INFO      [conta_2] [############################--] 77,151/81,517 (94.6%)
+2026-04-09 11:42:21  INFO      [conta_1] 32 pedidos para enriquecer.
+2026-04-09 11:42:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:42:44  INFO      [conta_1] Concluido nesta execucao.
+2026-04-09 11:42:45  INFO      [conta_2] 4,366 pedidos para enriquecer.
+2026-04-09 11:42:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:43:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:43:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:43:39  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:43:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:44:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:45:04  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:45:15  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:45:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:45:50  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:46:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:46:21  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:46:32  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:46:42  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:47:04  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:47:15  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:47:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:47:38  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:47:48  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:48:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:48:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:48:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:48:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:48:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:49:09  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:49:30  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:49:41  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:49:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:50:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:50:13  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:50:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:50:44  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:51:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:51:15  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 11:51:25  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 11:51:46  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-09 11:52:16  INFO      ============================================================
+2026-04-09 11:52:16  INFO      Total enriquecidos nesta execucao: 374
+2026-04-09 11:52:17  INFO      [conta_1] [##############################] 279,843/279,843 (100.0%)
+2026-04-09 11:52:17  INFO      [conta_2] [############################--] 77,493/81,517 (95.1%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 53, in enriquecer_pedido
+    resp = client.get_pedido(pedido_id)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 95, in get_pedido
+    return self.get(f"/pedidos/vendas/{pedido_id}")
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25514809215
+2026-04-09 12:40:48  INFO      ============================================================
+2026-04-09 12:40:48  INFO      Enriquecimento de pedidos — inicio
+2026-04-09 12:40:48  INFO      ============================================================
+2026-04-09 12:42:13  INFO      [conta_1] [#############################-] 279,843/279,877 (100.0%)
+2026-04-09 12:42:13  INFO      [conta_2] [############################--] 77,493/81,610 (95.0%)
+2026-04-09 12:42:14  INFO      [conta_1] 34 pedidos para enriquecer.
+2026-04-09 12:42:28  INFO      [conta_1] Concluido nesta execucao.
+2026-04-09 12:42:28  INFO      [conta_2] 4,117 pedidos para enriquecer.
+2026-04-09 12:43:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:45:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:45:58  INFO      [conta_2] 500/4,117 enriquecidos | 8521/h | ETA: 0.4h
+2026-04-09 12:46:21  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:48:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:49:29  INFO      [conta_2] 1,000/4,117 enriquecidos | 8526/h | ETA: 0.4h
+2026-04-09 12:49:38  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:49:50  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:50:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:50:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:50:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:51:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:52:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:53:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:54:02  INFO      [conta_2] 1,500/4,117 enriquecidos | 7790/h | ETA: 0.3h
+2026-04-09 12:54:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:54:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:54:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:55:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:56:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:57:21  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 12:58:15  INFO      [conta_2] 2,000/4,117 enriquecidos | 7606/h | ETA: 0.3h
+2026-04-09 13:00:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:00:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:01:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:02:01  INFO      [conta_2] 2,500/4,117 enriquecidos | 7678/h | ETA: 0.2h
+2026-04-09 13:02:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:03:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:04:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:04:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:04:58  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-09 13:06:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:06:32  INFO      [conta_2] 3,000/4,117 enriquecidos | 7486/h | ETA: 0.1h
+2026-04-09 13:07:10  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:09:30  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:10:06  INFO      [conta_2] 3,500/4,117 enriquecidos | 7602/h | ETA: 0.1h
+2026-04-09 13:10:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:10:41  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:10:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:11:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:12:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:13:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:14:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:14:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:14:33  INFO      ============================================================
+2026-04-09 13:14:33  INFO      Total enriquecidos nesta execucao: 3,629
+2026-04-09 13:15:50  INFO      [conta_1] [#############################-] 279,877/279,901 (100.0%)
+2026-04-09 13:15:50  INFO      [conta_2] [#############################-] 81,089/81,743 (99.2%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 62, in enriquecer_pedido
+    conn.commit()
+    ~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+2026-04-09 13:40:48  INFO      ============================================================
+2026-04-09 13:40:48  INFO      Enriquecimento de pedidos — inicio
+2026-04-09 13:40:48  INFO      ============================================================
+2026-04-09 13:41:02  INFO      [conta_1] [#############################-] 279,877/279,901 (100.0%)
+2026-04-09 13:41:02  INFO      [conta_2] [#############################-] 81,088/81,743 (99.2%)
+2026-04-09 13:41:03  INFO      [conta_1] 24 pedidos para enriquecer.
+2026-04-09 13:41:13  INFO      [conta_1] Concluido nesta execucao.
+2026-04-09 13:41:14  INFO      [conta_2] 655 pedidos para enriquecer.
+2026-04-09 13:41:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:42:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:43:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:44:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:45:05  INFO      [conta_2] 500/655 enriquecidos | 7741/h | ETA: 0.0h
+2026-04-09 13:45:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:45:48  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 13:46:25  INFO      [conta_2] Concluido nesta execucao.
+2026-04-09 13:46:25  INFO      ============================================================
+2026-04-09 13:46:25  INFO      Total enriquecidos nesta execucao: 679
+2026-04-09 13:46:27  INFO      [conta_1] [##############################] 279,901/279,901 (100.0%)
+2026-04-09 13:46:27  INFO      [conta_2] [##############################] 81,743/81,743 (100.0%)
+2026-04-09 14:40:48  INFO      ============================================================
+2026-04-09 14:40:48  INFO      Enriquecimento de pedidos — inicio
+2026-04-09 14:40:48  INFO      ============================================================
+2026-04-09 14:41:10  INFO      [conta_1] [#############################-] 279,901/279,929 (100.0%)
+2026-04-09 14:41:10  INFO      [conta_2] [#############################-] 81,743/81,883 (99.8%)
+2026-04-09 14:41:11  INFO      [conta_1] 28 pedidos para enriquecer.
+2026-04-09 14:41:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:41:33  INFO      [conta_1] Concluido nesta execucao.
+2026-04-09 14:41:34  INFO      [conta_2] 140 pedidos para enriquecer.
+2026-04-09 14:41:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:41:48  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:41:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:42:10  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:42:21  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:42:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:42:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:42:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:43:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:43:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:43:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:44:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:44:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:44:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:44:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:44:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:45:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-09 14:45:21  INFO      [conta_2] Concluido nesta execucao.
+2026-04-09 14:45:21  INFO      ============================================================
+2026-04-09 14:45:21  INFO      Total enriquecidos nesta execucao: 168
+2026-04-09 14:45:23  INFO      [conta_1] [##############################] 279,929/279,929 (100.0%)
+2026-04-09 14:45:23  INFO      [conta_2] [##############################] 81,883/81,883 (100.0%)
+2026-04-13 07:47:31  INFO      ============================================================
+2026-04-13 07:47:31  INFO      Enriquecimento de pedidos — inicio
+2026-04-13 07:47:31  INFO      ============================================================
+2026-04-13 07:50:27  INFO      [conta_1] [##############################] 279,929/279,929 (100.0%)
+2026-04-13 07:50:27  INFO      [conta_2] [##############################] 81,883/81,883 (100.0%)
+2026-04-13 07:52:21  INFO      [conta_1] Nenhum pedido pendente.
+2026-04-13 07:52:46  INFO      [conta_2] Nenhum pedido pendente.
+2026-04-13 07:52:46  INFO      ============================================================
+2026-04-13 07:52:46  INFO      Total enriquecidos nesta execucao: 0
+2026-04-13 07:57:29  INFO      [conta_1] [##############################] 279,929/279,929 (100.0%)
+2026-04-13 07:57:29  INFO      [conta_2] [##############################] 81,883/81,883 (100.0%)
+2026-04-13 08:40:49  INFO      ============================================================
+2026-04-13 08:40:49  INFO      Enriquecimento de pedidos — inicio
+2026-04-13 08:40:49  INFO      ============================================================
+2026-04-13 08:42:18  INFO      [conta_1] [#############################-] 279,929/281,496 (99.4%)
+2026-04-13 08:42:18  INFO      [conta_2] [###########################---] 81,883/87,850 (93.2%)
+2026-04-13 08:42:31  INFO      [conta_1] 1,567 pedidos para enriquecer.
+2026-04-13 08:42:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:44:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:45:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:45:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:45:28  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:45:41  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:45:56  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:46:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:46:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:46:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:46:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 08:48:00  INFO      [conta_1] 500/1,567 enriquecidos | 5255/h | ETA: 0.2h
+2026-04-13 08:50:27  INFO      ============================================================
+2026-04-13 08:50:27  INFO      Total enriquecidos nesta execucao: 832
+2026-04-13 08:51:14  INFO      [conta_1] [#############################-] 280,762/281,496 (99.7%)
+2026-04-13 08:51:14  INFO      [conta_2] [###########################---] 81,883/87,850 (93.2%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 62, in enriquecer_pedido
+    conn.commit()
+    ~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+2026-04-13 09:40:49  INFO      ============================================================
+2026-04-13 09:40:49  INFO      Enriquecimento de pedidos — inicio
+2026-04-13 09:40:49  INFO      ============================================================
+2026-04-13 09:42:41  INFO      [conta_1] [#############################-] 280,761/281,513 (99.7%)
+2026-04-13 09:42:41  INFO      [conta_2] [###########################---] 81,883/87,935 (93.1%)
+2026-04-13 09:42:56  INFO      [conta_1] 752 pedidos para enriquecer.
+2026-04-13 09:45:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:45:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:46:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:46:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:46:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:46:42  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 09:47:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:47:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:47:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:48:32  INFO      [conta_1] 500/752 enriquecidos | 5119/h | ETA: 0.0h
+2026-04-13 09:50:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:50:54  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 09:51:15  INFO      [conta_1] Concluido nesta execucao.
+2026-04-13 09:51:33  INFO      [conta_2] 6,052 pedidos para enriquecer.
+2026-04-13 09:51:36  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:51:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:52:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:52:10  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:52:25  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:52:39  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:52:50  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:53:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:53:11  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:53:22  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 09:53:43  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:53:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:54:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:54:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:54:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:54:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:54:50  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:55:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:55:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:55:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:55:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:55:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:55:56  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:56:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:56:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:56:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:56:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:56:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:57:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:57:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:57:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:57:41  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:57:51  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 09:58:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:58:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:58:38  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:58:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:59:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:59:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:59:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:59:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:59:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 09:59:56  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:00:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:00:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:00:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:00:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:00:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:01:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:01:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:01:30  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:01:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:01:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:02:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:02:21  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:02:32  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:02:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:02:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:03:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:03:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:03:27  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 10:03:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:04:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:04:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:04:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:04:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:04:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:05:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:05:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:05:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:05:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:05:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:06:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:06:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:06:25  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:06:39  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:06:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:07:03  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:07:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:07:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:07:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:07:48  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:07:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:08:11  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:08:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:08:33  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:08:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:08:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:09:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:09:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:09:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:09:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:09:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:10:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:10:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:10:28  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:10:39  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:10:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:28  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:39  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:11:49  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 10:12:11  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:12:22  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:12:38  INFO      ============================================================
+2026-04-13 10:12:38  INFO      Total enriquecidos nesta execucao: 1,060
+2026-04-13 10:14:12  INFO      [conta_1] [#############################-] 281,513/281,549 (100.0%)
+2026-04-13 10:14:12  INFO      [conta_2] [###########################---] 82,192/88,179 (93.2%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 62, in enriquecer_pedido
+    conn.commit()
+    ~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+2026-04-13 10:40:51  INFO      ============================================================
+2026-04-13 10:40:51  INFO      Enriquecimento de pedidos — inicio
+2026-04-13 10:40:51  INFO      ============================================================
+2026-04-13 10:42:46  INFO      [conta_1] [#############################-] 281,513/281,549 (100.0%)
+2026-04-13 10:42:46  INFO      [conta_2] [###########################---] 82,191/88,179 (93.2%)
+2026-04-13 10:43:16  INFO      [conta_1] 36 pedidos para enriquecer.
+2026-04-13 10:43:33  INFO      [conta_1] Concluido nesta execucao.
+2026-04-13 10:43:53  INFO      [conta_2] 5,988 pedidos para enriquecer.
+2026-04-13 10:43:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:44:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:44:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:44:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:44:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:44:52  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:45:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:45:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:45:32  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:45:43  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:45:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:46:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:46:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:46:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:46:42  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:46:56  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:47:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:47:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:47:31  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:47:45  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:47:56  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:48:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:48:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:48:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:48:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:48:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:49:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:49:23  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:49:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:49:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:50:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:50:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:50:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:50:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:50:48  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:50:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:51:11  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:51:22  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:51:33  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:51:44  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:51:55  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:52:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:52:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:52:32  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:52:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:53:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:53:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:53:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:53:35  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:53:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:53:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:54:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:54:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:54:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:54:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:55:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:55:14  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:55:25  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:55:37  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:55:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:56:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:56:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:56:25  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:56:36  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:56:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:56:58  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:57:09  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:57:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:57:33  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:57:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:58:01  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:58:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:58:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:58:40  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:58:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:59:07  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:59:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:59:29  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:59:43  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 10:59:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 11:00:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 11:00:20  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 11:00:34  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 11:00:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 11:00:57  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 11:01:07  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 11:01:27  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-13 11:01:57  INFO      ============================================================
+2026-04-13 11:01:57  INFO      Total enriquecidos nesta execucao: 385
+2026-04-13 11:04:53  INFO      [conta_1] [##############################] 281,549/281,549 (100.0%)
+2026-04-13 11:04:53  INFO      [conta_2] [############################--] 82,540/88,179 (93.6%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 53, in enriquecer_pedido
+    resp = client.get_pedido(pedido_id)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 95, in get_pedido
+    return self.get(f"/pedidos/vendas/{pedido_id}")
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25543760244
