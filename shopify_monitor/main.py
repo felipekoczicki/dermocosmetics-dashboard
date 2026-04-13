@@ -322,6 +322,26 @@ async def poll_manual():
     resultado = await poll_tudo()
     return RedirectResponse("/", status_code=303)
 
+# ── API: novos registros (para atualização em tempo real) ─────────────────────
+
+@app.get("/api/novos")
+async def api_novos(depois: int = 0, tipo: str = ""):
+    """Retorna registros com id > depois, para polling do frontend."""
+    with get_db() as conn:
+        where  = "WHERE id > ?" if not tipo else "WHERE id > ? AND tipo = ?"
+        params = (depois,) if not tipo else (depois, tipo)
+        rows   = conn.execute(
+            f"SELECT * FROM alteracoes {where} ORDER BY id DESC LIMIT 50", params
+        ).fetchall()
+        stats = {
+            "total":    conn.execute("SELECT COUNT(*) FROM alteracoes").fetchone()[0],
+            "hoje":     conn.execute("SELECT COUNT(*) FROM alteracoes WHERE date(timestamp)=date('now','localtime')").fetchone()[0],
+            "produtos": conn.execute("SELECT COUNT(*) FROM alteracoes WHERE tipo='produto'").fetchone()[0],
+            "temas":    conn.execute("SELECT COUNT(*) FROM alteracoes WHERE tipo='tema'").fetchone()[0],
+            "menus":    conn.execute("SELECT COUNT(*) FROM alteracoes WHERE tipo='menu'").fetchone()[0],
+        }
+    return {"registros": [dict(r) for r in rows], "stats": stats}
+
 # ── Dashboard ──────────────────────────────────────────────────────────────────
 
 @app.get("/", response_class=HTMLResponse)
