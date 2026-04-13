@@ -65,7 +65,14 @@ def set_config(key: str, value: str):
         conn.execute("INSERT OR REPLACE INTO config VALUES (?,?)", (key, value))
 
 def get_token() -> str | None:
-    return get_config("access_token")
+    # Tenta do banco primeiro, depois do .env (gerado pelo obter_token.py)
+    token = get_config("access_token")
+    if not token:
+        load_dotenv(override=True)
+        token = os.getenv("SHOPIFY_ACCESS_TOKEN")
+        if token:
+            save_token(token)  # migra para o banco
+    return token
 
 def log_change(tipo, recurso_id, recurso_nome, acao, descricao, dados=None):
     with get_db() as conn:
