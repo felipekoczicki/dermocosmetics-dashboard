@@ -197,6 +197,115 @@
             const row = document.getElementById('detalhe-' + id);
             row.classList.toggle('hidden');
         }
+
+        // ── Atualização em tempo real ──────────────────────────────────────────
+        const INTERVALO_MS = 10000; // 10 segundos
+        const tipoAtual = new URLSearchParams(window.location.search).get('tipo') || '';
+
+        // ID do registro mais recente na página
+        let ultimoId = (() => {
+            const rows = document.querySelectorAll('tbody tr[data-id]');
+            if (!rows.length) return 0;
+            return Math.max(...[...rows].map(r => parseInt(r.dataset.id || 0)));
+        })();
+
+        function badgeAcao(acao) {
+            const map = {
+                'criado':     'bg-green-50 text-green-700',
+                'instalado':  'bg-green-50 text-green-700',
+                'detectado':  'bg-green-50 text-green-700',
+                'excluído':   'bg-red-50 text-red-700',
+                'publicado':  'bg-blue-50 text-blue-700',
+            };
+            const cls = map[acao] || 'bg-yellow-50 text-yellow-700';
+            return `<span class="text-xs ${cls} px-2 py-0.5 rounded-full font-medium">${acao}</span>`;
+        }
+
+        function badgeTipo(tipo) {
+            const map = {
+                'produto': ['bg-orange-50 text-orange-600', '📦'],
+                'tema':    ['bg-purple-50 text-purple-600', '🎨'],
+                'menu':    ['bg-teal-50 text-teal-600',     '🧭'],
+            };
+            const [cls, icon] = map[tipo] || ['bg-gray-100 text-gray-500', '⚙️'];
+            return `<span class="inline-flex items-center gap-1 ${cls} text-xs font-medium px-2.5 py-1 rounded-full">${icon} ${tipo}</span>`;
+        }
+
+        function criarLinhas(reg) {
+            const detalheHtml = reg.dados_json
+                ? `<tr id="detalhe-${reg.id}" class="hidden bg-blue-50/30">
+                     <td colspan="6" class="px-4 pb-3 pt-0">
+                       <pre class="text-xs text-gray-600 bg-white border border-gray-100 p-3 rounded-lg overflow-auto max-h-48 shadow-inner">${reg.dados_json}</pre>
+                     </td>
+                   </tr>`
+                : '';
+            const btnDetalhe = reg.dados_json
+                ? `<button onclick="toggleDetalhe(${reg.id})" class="text-xs text-blue-500 hover:text-blue-700 font-medium">Detalhes</button>`
+                : '';
+
+            return `<tr data-id="${reg.id}" class="border-b border-gray-50 hover:bg-gray-50/70 transition-colors animate-pulse-once bg-green-50/40">
+                <td class="px-4 py-3">${badgeTipo(reg.tipo)}</td>
+                <td class="px-4 py-3 text-sm text-gray-900 font-medium max-w-[180px] truncate">${reg.recurso_nome || '—'}</td>
+                <td class="px-4 py-3">${badgeAcao(reg.acao)}</td>
+                <td class="px-4 py-3 text-sm text-gray-500 max-w-xs truncate">${reg.descricao || '—'}</td>
+                <td class="px-4 py-3 text-xs text-gray-400 whitespace-nowrap">${reg.timestamp}</td>
+                <td class="px-4 py-3 text-right">${btnDetalhe}</td>
+            </tr>${detalheHtml}`;
+        }
+
+        function atualizarStats(stats) {
+            const ids = ['stat-total','stat-hoje','stat-produtos','stat-temas','stat-menus'];
+            const vals = [stats.total, stats.hoje, stats.produtos, stats.temas, stats.menus];
+            ids.forEach((id, i) => {
+                const el = document.getElementById(id);
+                if (el && el.textContent != vals[i]) el.textContent = vals[i];
+            });
+        }
+
+        async function verificarNovos() {
+            try {
+                const url = `/api/novos?depois=${ultimoId}&tipo=${tipoAtual}`;
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (data.registros && data.registros.length > 0) {
+                    const tbody = document.querySelector('tbody');
+                    const novoHtml = data.registros.map(criarLinhas).join('');
+
+                    if (tbody) {
+                        tbody.insertAdjacentHTML('afterbegin', novoHtml);
+                    } else {
+                        // Tabela estava vazia — recarrega a página
+                        window.location.reload();
+                        return;
+                    }
+
+                    ultimoId = Math.max(ultimoId, ...data.registros.map(r => r.id));
+
+                    // Remove highlight após 3s
+                    setTimeout(() => {
+                        document.querySelectorAll('tr.bg-green-50\\/40').forEach(r => {
+                            r.classList.remove('bg-green-50/40', 'animate-pulse-once');
+                        });
+                    }, 3000);
+                }
+
+                if (data.stats) atualizarStats(data.stats);
+
+                // Atualiza indicador de último poll
+                document.getElementById('ultimo-poll-text') &&
+                    fetch('/api/novos?depois=0&tipo=sistema').then(r => r.json());
+
+            } catch (e) {
+                console.warn('Erro ao verificar novos registros:', e);
+            }
+        }
+
+        // Inicia polling após 2s e repete a cada INTERVALO_MS
+        setTimeout(() => {
+            verificarNovos();
+            setInterval(verificarNovos, INTERVALO_MS);
+        }, 2000);
     </script>
 </body>
 </html>
