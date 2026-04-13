@@ -740,3 +740,51 @@ Traceback (most recent call last):
     conn.commit()
     ~~~~~~~~~~~^^
 sqlite3.OperationalError: database is locked
+2026-04-13 12:40:50  INFO      ============================================================
+2026-04-13 12:40:50  INFO      Enriquecimento de pedidos — inicio
+2026-04-13 12:40:50  INFO      ============================================================
+2026-04-13 12:42:29  INFO      [conta_1] [#############################-] 281,549/281,612 (100.0%)
+2026-04-13 12:42:29  INFO      [conta_2] [############################--] 82,540/88,373 (93.4%)
+2026-04-13 12:42:30  INFO      [conta_1] 63 pedidos para enriquecer.
+2026-04-13 12:42:57  INFO      [conta_1] Concluido nesta execucao.
+2026-04-13 12:42:57  INFO      [conta_2] 5,833 pedidos para enriquecer.
+2026-04-13 12:42:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:43:13  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:43:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:43:38  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:43:51  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:44:02  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:44:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:44:27  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:44:38  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:44:49  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:45:00  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:45:11  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:45:21  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:45:33  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:45:43  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:45:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:46:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:46:15  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 12:46:36  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:46:46  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-13 12:46:56  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-13 12:47:17  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-13 12:47:47  INFO      ============================================================
+2026-04-13 12:47:47  INFO      Total enriquecidos nesta execucao: 124
+2026-04-13 12:49:37  INFO      [conta_1] [##############################] 281,612/281,612 (100.0%)
+2026-04-13 12:49:37  INFO      [conta_2] [############################--] 82,601/88,373 (93.5%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 53, in enriquecer_pedido
+    resp = client.get_pedido(pedido_id)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 95, in get_pedido
+    return self.get(f"/pedidos/vendas/{pedido_id}")
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25551997211
