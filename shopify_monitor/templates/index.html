@@ -20,16 +20,17 @@
             </div>
             <div class="flex items-center gap-2">
                 {% if instalado %}
-                <a href="/poll/menus" title="Verificar alterações nos menus agora"
+                <span class="text-xs text-gray-400">Poll: {{ ultimo_poll }} (a cada {{ intervalo }}min)</span>
+                <a href="/poll" title="Verificar alterações agora"
                    class="text-sm border border-gray-200 text-gray-600 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors">
-                    Verificar Menus
+                    Verificar Agora
                 </a>
                 <span class="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-xs font-medium px-3 py-1.5 rounded-lg">
                     <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Conectado
                 </span>
                 {% else %}
-                <a href="/install" class="bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
-                    Conectar à Loja
+                <a href="/setup" class="bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                    Configurar Token
                 </a>
                 {% endif %}
             </div>
