@@ -18,7 +18,7 @@ from config import BlingAccount
 
 logger = logging.getLogger(__name__)
 
-TOKEN_URL = "https://www.bling.com.br/Api/v3/oauth/token"
+TOKEN_URL = "https://api.bling.com.br/Api/v3/oauth/token"
 TOKEN_DIR = Path(__file__).parent / "tokens"
 # Renova o token 60 segundos antes de expirar para evitar erros de borda
 _EXPIRY_BUFFER_SECONDS = 60
