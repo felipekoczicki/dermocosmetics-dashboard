@@ -719,3 +719,24 @@ Traceback (most recent call last):
   File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
     raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
 RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25543760244
+2026-04-13 11:56:54  INFO      ============================================================
+2026-04-13 11:56:54  INFO      Enriquecimento de pedidos — inicio
+2026-04-13 11:56:54  INFO      ============================================================
+2026-04-13 11:58:42  INFO      [conta_1] [##############################] 281,549/281,549 (100.0%)
+2026-04-13 11:58:42  INFO      [conta_2] [############################--] 82,540/88,179 (93.6%)
+2026-04-13 11:59:59  INFO      [conta_1] Nenhum pedido pendente.
+2026-04-13 12:00:23  INFO      [conta_2] 5,639 pedidos para enriquecer.
+2026-04-13 12:00:30  INFO      ============================================================
+2026-04-13 12:00:30  INFO      Total enriquecidos nesta execucao: 0
+2026-04-13 12:02:30  INFO      [conta_1] [##############################] 281,549/281,549 (100.0%)
+2026-04-13 12:02:30  INFO      [conta_2] [############################--] 82,541/88,179 (93.6%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 62, in enriquecer_pedido
+    conn.commit()
+    ~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked

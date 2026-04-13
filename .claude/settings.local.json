@@ -9,7 +9,9 @@
       "Bash(schtasks:*)",
       "Bash(cmd.exe:*)",
       "Bash(powershell:*)",
-      "Bash(start \"\" streamlit run app.py)"
+      "Bash(start \"\" streamlit run app.py)",
+      "Bash(venv/Scripts/pip install:*)",
+      "Bash(venv/Scripts/python -c \"from main import app, init_db; init_db\\(\\); print\\('OK — app carrega sem erros'\\)\")"
     ]
   },
   "hooks": {

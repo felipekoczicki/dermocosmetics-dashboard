@@ -1,20 +1,17 @@
-import os, json, hmac, hashlib, base64, secrets, sqlite3
+import os, json, hashlib, sqlite3, asyncio
 from contextlib import asynccontextmanager, contextmanager
 from dotenv import load_dotenv
 import httpx
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 load_dotenv()
 
-CLIENT_ID     = os.getenv("SHOPIFY_CLIENT_ID")
-CLIENT_SECRET = os.getenv("SHOPIFY_CLIENT_SECRET")
-SHOP          = os.getenv("SHOPIFY_SHOP")
-APP_URL       = os.getenv("APP_URL")
-SCOPES        = "read_products,read_themes,read_online_store_navigation"
-API_VERSION   = "2024-10"
-DB_PATH       = "monitor.db"
+SHOP        = os.getenv("SHOPIFY_SHOP")
+API_VERSION = "2024-10"
+DB_PATH     = "monitor.db"
+POLL_INTERVALO_MINUTOS = 30
 
 # ── Database ───────────────────────────────────────────────────────────────────
 
@@ -48,21 +45,27 @@ def init_db():
                 dados_json   TEXT,
                 timestamp    TEXT DEFAULT (datetime('now','localtime'))
             );
-            CREATE TABLE IF NOT EXISTS menu_snapshot (
-                handle     TEXT PRIMARY KEY,
+            CREATE TABLE IF NOT EXISTS snapshots (
+                tipo       TEXT NOT NULL,
+                recurso_id TEXT NOT NULL,
+                hash       TEXT NOT NULL,
                 dados_json TEXT,
-                updated_at TEXT
+                updated_at TEXT DEFAULT (datetime('now','localtime')),
+                PRIMARY KEY (tipo, recurso_id)
             );
         """)
 
-def get_token() -> str | None:
+def get_config(key: str) -> str | None:
     with get_db() as conn:
-        row = conn.execute("SELECT value FROM config WHERE key='access_token'").fetchone()
+        row = conn.execute("SELECT value FROM config WHERE key=?", (key,)).fetchone()
         return row["value"] if row else None
 
-def save_token(token: str):
+def set_config(key: str, value: str):
     with get_db() as conn:
-        conn.execute("INSERT OR REPLACE INTO config VALUES ('access_token', ?)", (token,))
+        conn.execute("INSERT OR REPLACE INTO config VALUES (?,?)", (key, value))
+
+def get_token() -> str | None:
+    return get_config("access_token")
 
 def log_change(tipo, recurso_id, recurso_nome, acao, descricao, dados=None):
     with get_db() as conn:
@@ -72,171 +75,245 @@ def log_change(tipo, recurso_id, recurso_nome, acao, descricao, dados=None):
              json.dumps(dados, ensure_ascii=False) if dados else None)
         )
 
-# ── Shopify helpers ────────────────────────────────────────────────────────────
+# ── Shopify API ────────────────────────────────────────────────────────────────
 
-def verify_hmac(body: bytes, hmac_header: str) -> bool:
-    digest = hmac.new(CLIENT_SECRET.encode(), body, hashlib.sha256).digest()
-    return hmac.compare_digest(base64.b64encode(digest).decode(), hmac_header)
-
-async def shopify_get(path: str):
+async def shopify_get_all(path: str, chave: str) -> list:
+    """Busca todos os registros com paginação."""
     token = get_token()
     if not token:
-        return None
-    async with httpx.AsyncClient(timeout=15) as client:
-        r = await client.get(
-            f"https://{SHOP}/admin/api/{API_VERSION}{path}",
-            headers={"X-Shopify-Access-Token": token}
-        )
-        return r.json() if r.status_code == 200 else {"_status": r.status_code, "_body": r.text[:300]}
+        return []
+    resultados = []
+    url = f"https://{SHOP}/admin/api/{API_VERSION}{path}?limit=250"
+    async with httpx.AsyncClient(timeout=30) as client:
+        while url:
+            r = await client.get(url, headers={"X-Shopify-Access-Token": token})
+            if r.status_code != 200:
+                break
+            resultados.extend(r.json().get(chave, []))
+            # Paginação via Link header
+            link = r.headers.get("Link", "")
+            url = None
+            if 'rel="next"' in link:
+                for part in link.split(","):
+                    if 'rel="next"' in part:
+                        url = part.strip().split(";")[0].strip("<>")
+                        break
+    return resultados
 
-async def register_webhooks(token: str):
-    topics = [
-        ("products/create", "/webhooks/products"),
-        ("products/update", "/webhooks/products"),
-        ("products/delete", "/webhooks/products"),
-        ("themes/create",   "/webhooks/themes"),
-        ("themes/update",   "/webhooks/themes"),
-        ("themes/delete",   "/webhooks/themes"),
-        ("themes/publish",  "/webhooks/themes"),
-    ]
-    async with httpx.AsyncClient(timeout=15) as client:
-        for topic, path in topics:
-            await client.post(
-                f"https://{SHOP}/admin/api/{API_VERSION}/webhooks.json",
-                headers={"X-Shopify-Access-Token": token, "Content-Type": "application/json"},
-                json={"webhook": {"topic": topic, "address": f"{APP_URL}{path}", "format": "json"}}
-            )
+def hash_dados(dados: dict) -> str:
+    return hashlib.md5(json.dumps(dados, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
-# ── App ────────────────────────────────────────────────────────────────────────
+# ── Polling ────────────────────────────────────────────────────────────────────
 
-@asynccontextmanager
-async def lifespan(app):
-    init_db()
-    yield
-
-app = FastAPI(lifespan=lifespan, title="Monitor Shopify")
-templates = Jinja2Templates(directory="templates")
-
-# ── OAuth ──────────────────────────────────────────────────────────────────────
-
-@app.get("/install")
-def install():
-    return RedirectResponse(
-        f"https://{SHOP}/admin/oauth/authorize"
-        f"?client_id={CLIENT_ID}&scope={SCOPES}"
-        f"&redirect_uri={APP_URL}/auth/callback"
-        f"&state={secrets.token_hex(16)}"
-    )
-
-@app.get("/auth/callback")
-async def auth_callback(request: Request):
-    code = request.query_params.get("code")
-    if not code:
-        raise HTTPException(400, "Código OAuth ausente")
-    async with httpx.AsyncClient(timeout=15) as client:
-        r = await client.post(
-            f"https://{SHOP}/admin/oauth/access_token",
-            json={"client_id": CLIENT_ID, "client_secret": CLIENT_SECRET, "code": code}
-        )
-    token = r.json().get("access_token")
-    if not token:
-        raise HTTPException(400, f"Erro ao obter token: {r.json()}")
-    save_token(token)
-    await register_webhooks(token)
-    log_change("sistema", None, "Monitor", "instalado", f"App conectado à loja {SHOP}")
-    return RedirectResponse("/")
-
-# ── Webhooks ───────────────────────────────────────────────────────────────────
-
-@app.post("/webhooks/products")
-async def wh_products(request: Request):
-    body = await request.body()
-    if not verify_hmac(body, request.headers.get("X-Shopify-Hmac-Sha256", "")):
-        raise HTTPException(401, "HMAC inválido")
-    topic = request.headers.get("X-Shopify-Topic", "")
-    data  = json.loads(body)
-    nome  = data.get("title", "—")
-    pid   = data.get("id")
-    ACOES = {
-        "products/create": ("criado",     f"Produto '{nome}' criado"),
-        "products/update": ("atualizado", f"Produto '{nome}' atualizado"),
-        "products/delete": ("excluído",   f"Produto '{nome}' excluído"),
+def _campos_produto(p: dict) -> dict:
+    """Extrai campos relevantes de um produto para comparação."""
+    return {
+        "titulo":   p.get("title"),
+        "status":   p.get("status"),
+        "tags":     p.get("tags"),
+        "variantes": [
+            {"sku": v.get("sku"), "preco": v.get("price"), "estoque": v.get("inventory_quantity")}
+            for v in p.get("variants", [])
+        ],
+        "imagens": [i.get("src") for i in p.get("images", [])],
     }
-    acao, desc = ACOES.get(topic, ("alterado", topic))
-    detalhes = None
-    if topic == "products/update":
-        detalhes = {
-            "status":    data.get("status"),
-            "titulo":    nome,
-            "tags":      data.get("tags"),
-            "variantes": [
-                {"sku": v.get("sku"), "preco": v.get("price"), "estoque": v.get("inventory_quantity")}
-                for v in data.get("variants", [])
-            ],
-        }
-    log_change("produto", pid, nome, acao, desc, detalhes)
-    return {"ok": True}
 
-@app.post("/webhooks/themes")
-async def wh_themes(request: Request):
-    body = await request.body()
-    if not verify_hmac(body, request.headers.get("X-Shopify-Hmac-Sha256", "")):
-        raise HTTPException(401, "HMAC inválido")
-    topic = request.headers.get("X-Shopify-Topic", "")
-    data  = json.loads(body)
-    nome  = data.get("name", "—")
-    tid   = data.get("id")
-    ACOES = {
-        "themes/create":  ("criado",     f"Tema '{nome}' criado"),
-        "themes/update":  ("atualizado", f"Tema '{nome}' atualizado"),
-        "themes/delete":  ("excluído",   f"Tema '{nome}' excluído"),
-        "themes/publish": ("publicado",  f"Tema '{nome}' publicado como tema ativo"),
-    }
-    acao, desc = ACOES.get(topic, ("alterado", topic))
-    log_change("tema", tid, nome, acao, desc, {"role": data.get("role")})
-    return {"ok": True}
+async def poll_produtos() -> dict:
+    produtos = await shopify_get_all("/products.json", "products")
+    criados = atualizados = 0
+    ids_atuais = set()
+    with get_db() as conn:
+        for p in produtos:
+            pid      = str(p["id"])
+            nome     = p.get("title", "—")
+            campos   = _campos_produto(p)
+            h        = hash_dados(campos)
+            ids_atuais.add(pid)
+            row = conn.execute(
+                "SELECT hash FROM snapshots WHERE tipo='produto' AND recurso_id=?", (pid,)
+            ).fetchone()
+            if not row:
+                conn.execute(
+                    "INSERT INTO snapshots VALUES ('produto',?,?,?,datetime('now','localtime'))",
+                    (pid, h, json.dumps(campos, ensure_ascii=False))
+                )
+                log_change("produto", pid, nome, "criado", f"Produto '{nome}' detectado")
+                criados += 1
+            elif row["hash"] != h:
+                conn.execute(
+                    "UPDATE snapshots SET hash=?, dados_json=?, updated_at=datetime('now','localtime') WHERE tipo='produto' AND recurso_id=?",
+                    (h, json.dumps(campos, ensure_ascii=False), pid)
+                )
+                log_change("produto", pid, nome, "atualizado", f"Produto '{nome}' foi modificado", campos)
+                atualizados += 1
 
-# ── Menu polling ───────────────────────────────────────────────────────────────
+        # Detectar excluídos
+        rows = conn.execute("SELECT recurso_id, dados_json FROM snapshots WHERE tipo='produto'").fetchall()
+        for row in rows:
+            if row["recurso_id"] not in ids_atuais:
+                dados = json.loads(row["dados_json"] or "{}")
+                nome  = dados.get("titulo", row["recurso_id"])
+                log_change("produto", row["recurso_id"], nome, "excluído", f"Produto '{nome}' foi excluído")
+                conn.execute("DELETE FROM snapshots WHERE tipo='produto' AND recurso_id=?", (row["recurso_id"],))
 
-@app.get("/poll/menus")
-async def poll_menus():
-    """Verifica alterações nos menus comparando com o snapshot anterior."""
+    return {"verificados": len(produtos), "criados": criados, "atualizados": atualizados}
+
+async def poll_temas() -> dict:
+    temas = await shopify_get_all("/themes.json", "themes")
+    criados = atualizados = 0
+    ids_atuais = set()
+    with get_db() as conn:
+        for t in temas:
+            tid    = str(t["id"])
+            nome   = t.get("name", "—")
+            campos = {"nome": nome, "role": t.get("role"), "theme_store_id": t.get("theme_store_id")}
+            h      = hash_dados(campos)
+            ids_atuais.add(tid)
+            row = conn.execute(
+                "SELECT hash, dados_json FROM snapshots WHERE tipo='tema' AND recurso_id=?", (tid,)
+            ).fetchone()
+            if not row:
+                conn.execute(
+                    "INSERT INTO snapshots VALUES ('tema',?,?,?,datetime('now','localtime'))",
+                    (tid, h, json.dumps(campos, ensure_ascii=False))
+                )
+                log_change("tema", tid, nome, "criado", f"Tema '{nome}' detectado")
+                criados += 1
+            elif row["hash"] != h:
+                ant   = json.loads(row["dados_json"] or "{}")
+                acao  = "publicado" if campos.get("role") == "main" and ant.get("role") != "main" else "atualizado"
+                desc  = f"Tema '{nome}' publicado como tema ativo" if acao == "publicado" else f"Tema '{nome}' atualizado"
+                conn.execute(
+                    "UPDATE snapshots SET hash=?, dados_json=?, updated_at=datetime('now','localtime') WHERE tipo='tema' AND recurso_id=?",
+                    (h, json.dumps(campos, ensure_ascii=False), tid)
+                )
+                log_change("tema", tid, nome, acao, desc, {"antes": ant, "depois": campos})
+                atualizados += 1
+
+        rows = conn.execute("SELECT recurso_id, dados_json FROM snapshots WHERE tipo='tema'").fetchall()
+        for row in rows:
+            if row["recurso_id"] not in ids_atuais:
+                dados = json.loads(row["dados_json"] or "{}")
+                nome  = dados.get("nome", row["recurso_id"])
+                log_change("tema", row["recurso_id"], nome, "excluído", f"Tema '{nome}' foi excluído")
+                conn.execute("DELETE FROM snapshots WHERE tipo='tema' AND recurso_id=?", (row["recurso_id"],))
+
+    return {"verificados": len(temas), "criados": criados, "atualizados": atualizados}
+
+async def poll_menus() -> dict:
     token = get_token()
     if not token:
-        return {"erro": "App não instalado. Acesse /install primeiro."}
+        return {"erro": "Token não configurado"}
     async with httpx.AsyncClient(timeout=15) as client:
         r = await client.get(
             f"https://{SHOP}/admin/api/{API_VERSION}/menus.json",
             headers={"X-Shopify-Access-Token": token}
         )
     if r.status_code != 200:
-        return {"erro": f"Endpoint indisponível (HTTP {r.status_code})", "detalhe": r.text[:300]}
+        return {"erro": f"HTTP {r.status_code}", "detalhe": r.text[:200]}
     menus = r.json().get("menus", [])
-    count = 0
+    criados = atualizados = 0
+    ids_atuais = set()
     with get_db() as conn:
-        for menu in menus:
-            handle    = menu.get("handle")
-            dados_str = json.dumps(menu, ensure_ascii=False, sort_keys=True)
-            row       = conn.execute(
-                "SELECT dados_json FROM menu_snapshot WHERE handle=?", (handle,)
+        for m in menus:
+            mid  = str(m["id"])
+            nome = m.get("title", "—")
+            h    = hash_dados(m)
+            ids_atuais.add(mid)
+            row  = conn.execute(
+                "SELECT hash FROM snapshots WHERE tipo='menu' AND recurso_id=?", (mid,)
             ).fetchone()
             if not row:
                 conn.execute(
-                    "INSERT INTO menu_snapshot VALUES (?,?,datetime('now','localtime'))",
-                    (handle, dados_str)
+                    "INSERT INTO snapshots VALUES ('menu',?,?,?,datetime('now','localtime'))",
+                    (mid, h, json.dumps(m, ensure_ascii=False))
                 )
-                log_change("menu", menu.get("id"), menu.get("title"), "detectado",
-                           f"Menu '{menu.get('title')}' registrado (snapshot inicial)")
-                count += 1
-            elif row["dados_json"] != dados_str:
+                log_change("menu", mid, nome, "criado", f"Menu '{nome}' detectado")
+                criados += 1
+            elif row["hash"] != h:
                 conn.execute(
-                    "UPDATE menu_snapshot SET dados_json=?, updated_at=datetime('now','localtime') WHERE handle=?",
-                    (dados_str, handle)
+                    "UPDATE snapshots SET hash=?, dados_json=?, updated_at=datetime('now','localtime') WHERE tipo='menu' AND recurso_id=?",
+                    (h, json.dumps(m, ensure_ascii=False), mid)
                 )
-                log_change("menu", menu.get("id"), menu.get("title"), "atualizado",
-                           f"Menu '{menu.get('title')}' foi modificado", menu)
-                count += 1
-    return {"menus_verificados": len(menus), "alteracoes_detectadas": count}
+                log_change("menu", mid, nome, "atualizado", f"Menu '{nome}' foi modificado", m)
+                atualizados += 1
+
+        rows = conn.execute("SELECT recurso_id, dados_json FROM snapshots WHERE tipo='menu'").fetchall()
+        for row in rows:
+            if row["recurso_id"] not in ids_atuais:
+                dados = json.loads(row["dados_json"] or "{}")
+                nome  = dados.get("title", row["recurso_id"])
+                log_change("menu", row["recurso_id"], nome, "excluído", f"Menu '{nome}' excluído")
+                conn.execute("DELETE FROM snapshots WHERE tipo='menu' AND recurso_id=?", (row["recurso_id"],))
+
+    return {"verificados": len(menus), "criados": criados, "atualizados": atualizados}
+
+async def poll_tudo():
+    set_config("ultimo_poll", "rodando")
+    r_p = await poll_produtos()
+    r_t = await poll_temas()
+    r_m = await poll_menus()
+    from datetime import datetime
+    set_config("ultimo_poll", datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+    return {"produtos": r_p, "temas": r_t, "menus": r_m}
+
+# ── Scheduler ─────────────────────────────────────────────────────────────────
+
+async def scheduler():
+    """Executa poll a cada POLL_INTERVALO_MINUTOS."""
+    await asyncio.sleep(5)  # aguarda app subir
+    while True:
+        try:
+            if get_token():
+                await poll_tudo()
+        except Exception as e:
+            log_change("sistema", None, "Scheduler", "erro", f"Erro no poll automático: {e}")
+        await asyncio.sleep(POLL_INTERVALO_MINUTOS * 60)
+
+# ── App ────────────────────────────────────────────────────────────────────────
+
+@asynccontextmanager
+async def lifespan(app):
+    init_db()
+    asyncio.create_task(scheduler())
+    yield
+
+app = FastAPI(lifespan=lifespan, title="Monitor Shopify")
+templates = Jinja2Templates(directory="templates")
+
+# ── Setup (token manual) ───────────────────────────────────────────────────────
+
+@app.get("/setup", response_class=HTMLResponse)
+async def setup_get(request: Request):
+    return templates.TemplateResponse("setup.html", {"request": request, "shop": SHOP, "erro": None})
+
+@app.post("/setup")
+async def setup_post(token: str = Form(...)):
+    token = token.strip()
+    # Validar token chamando a API
+    async with httpx.AsyncClient(timeout=10) as client:
+        r = await client.get(
+            f"https://{SHOP}/admin/api/{API_VERSION}/shop.json",
+            headers={"X-Shopify-Access-Token": token}
+        )
+    if r.status_code != 200:
+        return templates.TemplateResponse("setup.html", {
+            "request": {}, "shop": SHOP,
+            "erro": f"Token inválido (HTTP {r.status_code}). Verifique e tente novamente."
+        })
+    set_config("access_token", token)
+    log_change("sistema", None, "Monitor", "configurado", f"Token configurado para {SHOP}")
+    asyncio.create_task(poll_tudo())
+    return RedirectResponse("/", status_code=303)
+
+# ── Poll manual ────────────────────────────────────────────────────────────────
+
+@app.get("/poll")
+async def poll_manual():
+    if not get_token():
+        return RedirectResponse("/setup")
+    resultado = await poll_tudo()
+    return RedirectResponse("/", status_code=303)
 
 # ── Dashboard ──────────────────────────────────────────────────────────────────
 
@@ -269,4 +346,6 @@ async def dashboard(request: Request, tipo: str = "", pagina: int = 1):
         "total":         total,
         "instalado":     get_token() is not None,
         "shop":          SHOP,
+        "ultimo_poll":   get_config("ultimo_poll") or "nunca",
+        "intervalo":     POLL_INTERVALO_MINUTOS,
     })
