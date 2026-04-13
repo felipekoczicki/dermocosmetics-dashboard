@@ -29,7 +29,10 @@ async def callback(code: str = None, error: str = None):
 
     if error:
         html = f"<h2>❌ Erro: {error}</h2><p>Feche e tente novamente.</p>"
-        threading.Thread(target=lambda: (time.sleep(1), servidor.should_exit := True)).start()
+        def parar_erro():
+            time.sleep(1)
+            servidor.should_exit = True
+        threading.Thread(target=parar_erro, daemon=True).start()
         return HTMLResponse(html)
 
     async with httpx.AsyncClient(timeout=15) as client:
