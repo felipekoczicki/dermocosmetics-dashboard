@@ -1,0 +1,148 @@
+// ============================================================
+// MEDIDAS DAX — Dashboard Bling / Power BI
+// Crie uma tabela vazia chamada "_Medidas" e adicione abaixo
+// ============================================================
+
+
+// ────────────────────────────────────────────────────────────
+// FATURAMENTO
+// ────────────────────────────────────────────────────────────
+
+Faturamento Total =
+    SUMX(
+        FILTER(Pedidos, Pedidos[situacao_valor] <> 2),  // exclui cancelados
+        Pedidos[total]
+    )
+
+Faturamento Atendido =
+    CALCULATE(
+        SUM(Pedidos[total]),
+        Pedidos[situacao_valor] = 1
+    )
+
+Faturamento Período Anterior =
+    CALCULATE(
+        [Faturamento Total],
+        PREVIOUSMONTH(Calendario[Data])
+    )
+
+Faturamento MoM % =
+    VAR Atual    = [Faturamento Total]
+    VAR Anterior = [Faturamento Período Anterior]
+    RETURN
+        IF(
+            Anterior = 0 || ISBLANK(Anterior),
+            BLANK(),
+            DIVIDE(Atual - Anterior, Anterior)
+        )
+
+Faturamento YTD =
+    TOTALYTD([Faturamento Total], Calendario[Data])
+
+Faturamento Ano Anterior =
+    CALCULATE([Faturamento Total], SAMEPERIODLASTYEAR(Calendario[Data]))
+
+Faturamento YoY % =
+    VAR Atual    = [Faturamento YTD]
+    VAR Anterior = CALCULATE([Faturamento Total], SAMEPERIODLASTYEAR(Calendario[Data]))
+    RETURN DIVIDE(Atual - Anterior, Anterior)
+
+
+// ────────────────────────────────────────────────────────────
+// PEDIDOS
+// ────────────────────────────────────────────────────────────
+
+Total de Pedidos =
+    COUNTROWS(Pedidos)
+
+Pedidos Atendidos =
+    CALCULATE(COUNTROWS(Pedidos), Pedidos[situacao_valor] = 1)
+
+Pedidos Cancelados =
+    CALCULATE(COUNTROWS(Pedidos), Pedidos[situacao_valor] = 2)
+
+Pedidos Em Aberto =
+    CALCULATE(COUNTROWS(Pedidos), Pedidos[situacao_valor] = 0)
+
+Taxa de Cancelamento =
+    DIVIDE([Pedidos Cancelados], [Total de Pedidos])
+
+Taxa de Atendimento =
+    DIVIDE([Pedidos Atendidos], [Total de Pedidos])
+
+
+// ────────────────────────────────────────────────────────────
+// TICKET MÉDIO
+// ────────────────────────────────────────────────────────────
+
+Ticket Médio =
+    DIVIDE([Faturamento Atendido], [Pedidos Atendidos])
+
+Ticket Médio Período Anterior =
+    CALCULATE(
+        [Ticket Médio],
+        PREVIOUSMONTH(Calendario[Data])
+    )
+
+Ticket MoM % =
+    DIVIDE(
+        [Ticket Médio] - [Ticket Médio Período Anterior],
+        [Ticket Médio Período Anterior]
+    )
+
+
+// ────────────────────────────────────────────────────────────
+// PRODUTOS / ITENS
+// ────────────────────────────────────────────────────────────
+
+Total Itens Vendidos =
+    SUM(Itens[quantidade])
+
+Faturamento Itens =
+    SUM(Itens[valor_total])
+
+Itens por Pedido =
+    DIVIDE([Total Itens Vendidos], [Pedidos Atendidos])
+
+
+// ────────────────────────────────────────────────────────────
+// FRETE
+// ────────────────────────────────────────────────────────────
+
+Custo Frete Total =
+    SUM(Pedidos[custo_frete])
+
+Frete Médio =
+    DIVIDE([Custo Frete Total], [Pedidos Atendidos])
+
+Frete sobre Faturamento % =
+    DIVIDE([Custo Frete Total], [Faturamento Atendido])
+
+
+// ────────────────────────────────────────────────────────────
+// CLIENTES
+// ────────────────────────────────────────────────────────────
+
+Clientes Únicos =
+    DISTINCTCOUNT(Pedidos[contato_id])
+
+Pedidos por Cliente =
+    DIVIDE([Total de Pedidos], [Clientes Únicos])
+
+Faturamento por Cliente =
+    DIVIDE([Faturamento Total], [Clientes Únicos])
+
+
+// ────────────────────────────────────────────────────────────
+// FORMATAÇÃO (para exibição em cartões)
+// ────────────────────────────────────────────────────────────
+
+Faturamento Total (R$) =
+    "R$ " & FORMAT([Faturamento Total], "#,##0.00")
+
+Ticket Médio (R$) =
+    "R$ " & FORMAT([Ticket Médio], "#,##0.00")
+
+MoM Label =
+    VAR v = [Faturamento MoM %]
+    RETURN IF(v >= 0, "▲ " & FORMAT(v, "0.0%"), "▼ " & FORMAT(ABS(v), "0.0%"))

@@ -3384,3 +3384,26 @@ Exportando parcelas...
   372,557 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
 
 Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-18 21:47:18  INFO      ============================================================
+2026-04-18 21:47:18  INFO      Conta: conta_1
+2026-04-18 21:47:18  INFO      ============================================================
+2026-04-18 21:47:18  INFO      [conta_1] Sincronização incremental a partir de 2026-04-15
+2026-04-18 21:47:18  INFO      [conta_1] Janela: 2026-04-15 ate 2026-04-18
+2026-04-18 21:47:18  INFO      Token expirado para 'conta_1'. Renovando...
+2026-04-18 21:47:22  INFO      Token renovado com sucesso para 'conta_1'.
+2026-04-18 21:47:30  ERROR     Erro inesperado durante a sincronização.
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_sync.py", line 98, in main
+    total = sync.sync_incremental()
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 60, in sync_incremental
+    return self._sync_range(start, date.today())
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 69, in _sync_range
+    count = self._sync_window(window_start.isoformat(), window_end.isoformat())
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\sync.py", line 87, in _sync_window
+    self._db.upsert_pedidos(pedidos, self._account)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\db.py", line 81, in upsert_pedidos
+    self._conn.commit()
+    ~~~~~~~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
