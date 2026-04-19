@@ -58,8 +58,44 @@ let
           else "Outros (" & Text.From(s) & ")"
     , type text),
 
+    // Coluna: Nome do canal pela loja_id
+    AdicionaCanal = Table.AddColumn(AdicionaSituacao, "canal_nome", each
+        let id = [loja_id]
+        in if id = 0          then "Sem Loja"
+          else if id = 203517871  then "Pedido Manual - Matriz"
+          else if id = 203537101  then "Woocommerce 1 - Matriz"
+          else if id = 203546568  then "Woocommerce 2 - Matriz"
+          else if id = 203645900  then "Mercado Livre - Matriz"
+          else if id = 203674668  then "Shopee - Matriz"
+          else if id = 203736743  then "Magalu - Matriz"
+          else if id = 203787491  then "Casas Bahia - Matriz"
+          else if id = 203805899  then "Woocommerce 2 - Matriz"
+          else if id = 204869938  then "Yampi - Matriz"
+          else if id = 204872143  then "Shopify - Matriz"
+          else if id = 204879236  then "Amazon - Matriz"
+          else if id = 204882412  then "Época Cosméticos - Matriz"
+          else if id = 205155589  then "Uappi - Matriz"
+          else if id = 205163053  then "Beleza na Web - Matriz"
+          else if id = 205346798  then "Yampi 2 - Matriz"
+          else if id = 205410647  then "TikTok Shop - Matriz"
+          else if id = 205445683  then "Influencers - Matriz"
+          else if id = 205446112  then "Assinatura - Matriz"
+          else if id = 205446121  then "Monetizze - Matriz"
+          else if id = 205446125  then "B4YOU - Matriz"
+          else if id = 205470702  then "Payt - Matriz"
+          else if id = 205702648  then "Afilistar - Matriz"
+          else if id = 205834757  then "Base - Matriz"
+          else if id = 205856775  then "TikTok Shop - Filial"
+          else if id = 205864553  then "Shopee - Filial"
+          else if id = 205948946  then "Pedido Manual - Filial"
+          else if id = 205978634  then "Shopify API - Matriz"
+          else if id = 205979534  then "Shopify API - Filial"
+          else if id = 206013577  then "Reenvio - Matriz"
+          else "Outros"
+    , type text),
+
     // Coluna: Marketplace pelo CNPJ do intermediador
-    AdicionaMarketplace = Table.AddColumn(AdicionaSituacao, "marketplace", each
+    AdicionaMarketplace = Table.AddColumn(AdicionaCanal, "marketplace", each
         let c = [intermediador_cnpj]
         in if c = "27.415.911/0001-36" then "Mercado Livre"
           else if c = "35.635.824/0001-12" then "Shopee"
