@@ -2245,3 +2245,30 @@ RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos
 2026-04-18 21:52:40  INFO      Total enriquecidos nesta execucao: 0
 2026-04-18 21:55:06  INFO      [conta_1] [##############################] 282,889/282,889 (100.0%)
 2026-04-18 21:55:06  INFO      [conta_2] [##############################] 92,889/92,889 (100.0%)
+2026-04-18 22:40:47  INFO      ============================================================
+2026-04-18 22:40:47  INFO      Enriquecimento de pedidos — inicio
+2026-04-18 22:40:47  INFO      ============================================================
+2026-04-18 22:40:50  INFO      [conta_1] [#############################-] 282,889/283,573 (99.8%)
+2026-04-18 22:40:50  INFO      [conta_2] [#############################-] 92,889/95,190 (97.6%)
+2026-04-18 22:40:51  INFO      [conta_1] 684 pedidos para enriquecer.
+2026-04-18 22:41:10  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:41:24  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:44:14  INFO      [conta_1] 500/684 enriquecidos | 8820/h | ETA: 0.0h
+2026-04-18 22:45:06  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:45:17  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:45:41  INFO      [conta_1] Concluido nesta execucao.
+2026-04-18 22:45:42  INFO      [conta_2] 2,301 pedidos para enriquecer.
+2026-04-18 22:47:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:48:55  INFO      [conta_2] 500/2,301 enriquecidos | 8783/h | ETA: 0.2h
+2026-04-18 22:49:19  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:52:09  INFO      [conta_2] 1,000/2,301 enriquecidos | 8924/h | ETA: 0.1h
+2026-04-18 22:52:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:55:22  INFO      [conta_2] 1,500/2,301 enriquecidos | 9011/h | ETA: 0.1h
+2026-04-18 22:57:12  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 22:58:35  INFO      [conta_2] 2,000/2,301 enriquecidos | 9072/h | ETA: 0.0h
+2026-04-18 23:00:08  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-18 23:00:36  INFO      [conta_2] Concluido nesta execucao.
+2026-04-18 23:00:36  INFO      ============================================================
+2026-04-18 23:00:36  INFO      Total enriquecidos nesta execucao: 2,985
+2026-04-18 23:00:40  INFO      [conta_1] [##############################] 283,573/283,573 (100.0%)
+2026-04-18 23:00:40  INFO      [conta_2] [##############################] 95,190/95,190 (100.0%)

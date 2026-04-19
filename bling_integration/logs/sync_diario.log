@@ -3515,3 +3515,46 @@ Exportando parcelas...
   372,557 linhas -> C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports\parcelas.parquet
 
 Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exports
+2026-04-18 23:10:48  INFO      ============================================================
+2026-04-18 23:10:48  INFO      Conta: conta_1
+2026-04-18 23:10:48  INFO      ============================================================
+2026-04-18 23:10:48  INFO      [conta_1] Sincronização incremental a partir de 2026-04-17
+2026-04-18 23:10:48  INFO      [conta_1] Janela: 2026-04-17 ate 2026-04-18
+2026-04-18 23:10:49  INFO      [conta_1] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-18 23:10:49  INFO      [conta_1] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-18 23:10:50  INFO      [conta_1] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-18 23:10:50  INFO      [conta_1] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-18 23:10:51  INFO      [conta_1] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-18 23:10:51  INFO      [conta_1] Pagina 6: 57 pedidos (acumulado: 557)
+2026-04-18 23:10:51  INFO      [conta_1] 2026-04-17 ate 2026-04-18: 557 pedidos importados
+2026-04-18 23:10:51  INFO      [conta_1] Total sincronizado: 557 pedidos
+2026-04-18 23:10:51  INFO      Resumo [conta_1]: 557 pedidos sincronizados
+2026-04-18 23:10:52  INFO      Total no banco [conta_1]: 283581 registros
+2026-04-18 23:10:52  INFO      ============================================================
+2026-04-18 23:10:52  INFO      Conta: conta_2
+2026-04-18 23:10:52  INFO      ============================================================
+2026-04-18 23:10:52  INFO      [conta_2] Sincronização incremental a partir de 2026-04-17
+2026-04-18 23:10:52  INFO      [conta_2] Janela: 2026-04-17 ate 2026-04-18
+2026-04-18 23:10:52  INFO      [conta_2] Pagina 1: 100 pedidos (acumulado: 100)
+2026-04-18 23:10:53  INFO      [conta_2] Pagina 2: 100 pedidos (acumulado: 200)
+2026-04-18 23:10:53  INFO      [conta_2] Pagina 3: 100 pedidos (acumulado: 300)
+2026-04-18 23:10:54  INFO      [conta_2] Pagina 4: 100 pedidos (acumulado: 400)
+2026-04-18 23:10:54  INFO      [conta_2] Pagina 5: 100 pedidos (acumulado: 500)
+2026-04-18 23:10:54  INFO      [conta_2] Pagina 6: 100 pedidos (acumulado: 600)
+2026-04-18 23:10:55  INFO      [conta_2] Pagina 7: 100 pedidos (acumulado: 700)
+2026-04-18 23:10:55  INFO      [conta_2] Pagina 8: 100 pedidos (acumulado: 800)
+2026-04-18 23:10:56  INFO      [conta_2] Pagina 9: 100 pedidos (acumulado: 900)
+2026-04-18 23:10:56  INFO      [conta_2] Pagina 10: 100 pedidos (acumulado: 1000)
+2026-04-18 23:10:57  INFO      [conta_2] Pagina 11: 100 pedidos (acumulado: 1100)
+2026-04-18 23:10:57  INFO      [conta_2] Pagina 12: 100 pedidos (acumulado: 1200)
+2026-04-18 23:10:58  INFO      [conta_2] Pagina 13: 100 pedidos (acumulado: 1300)
+2026-04-18 23:10:58  INFO      [conta_2] Pagina 14: 100 pedidos (acumulado: 1400)
+2026-04-18 23:10:59  INFO      [conta_2] Pagina 15: 100 pedidos (acumulado: 1500)
+2026-04-18 23:10:59  INFO      [conta_2] Pagina 16: 100 pedidos (acumulado: 1600)
+2026-04-18 23:11:00  INFO      [conta_2] Pagina 17: 100 pedidos (acumulado: 1700)
+2026-04-18 23:11:00  INFO      [conta_2] Pagina 18: 76 pedidos (acumulado: 1776)
+2026-04-18 23:11:00  INFO      [conta_2] 2026-04-17 ate 2026-04-18: 1776 pedidos importados
+2026-04-18 23:11:00  INFO      [conta_2] Total sincronizado: 1776 pedidos
+2026-04-18 23:11:00  INFO      Resumo [conta_2]: 1776 pedidos sincronizados
+2026-04-18 23:11:00  INFO      Total no banco [conta_2]: 95229 registros
+2026-04-18 23:11:00  INFO      Sincronização concluída.
