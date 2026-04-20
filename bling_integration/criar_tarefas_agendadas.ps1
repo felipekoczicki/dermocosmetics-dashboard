@@ -23,7 +23,7 @@ Write-Host "[OK] Bling_SyncDiario criada (a cada 1 hora)" -ForegroundColor Green
 
 # --- Tarefa 2: Enriquecimento (a cada 1 hora, com 30min de offset) ---
 $action2  = New-ScheduledTaskAction -Execute "$BASE\enriquecer.bat"
-$trigger2 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Hours 1) -Once -At (Get-Date).AddMinutes(30)
+$trigger2 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 15) -Once -At (Get-Date).AddMinutes(7)
 
 Register-ScheduledTask `
     -TaskName   "Bling_Enriquecer" `
