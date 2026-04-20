@@ -12,7 +12,7 @@ $principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -LogonType S4U -Ru
 
 Register-ScheduledTask `
     -TaskName   "Bling_SyncDiario" `
-    -Description "Sync incremental Bling + Export Parquet (a cada 1 hora)" `
+    -Description "Sync incremental Bling + Export Parquet (a cada 15 minutos)" `
     -Action     $action1 `
     -Trigger    $trigger1 `
     -Settings   $settings `
