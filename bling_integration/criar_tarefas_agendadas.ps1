@@ -27,7 +27,7 @@ $trigger2 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 
 
 Register-ScheduledTask `
     -TaskName   "Bling_Enriquecer" `
-    -Description "Enriquecimento incremental de pedidos Bling (a cada 1 hora)" `
+    -Description "Enriquecimento incremental de pedidos Bling (a cada 15 minutos)" `
     -Action     $action2 `
     -Trigger    $trigger2 `
     -Settings   $settings `
