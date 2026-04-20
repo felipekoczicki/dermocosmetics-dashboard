@@ -34,7 +34,7 @@ Register-ScheduledTask `
     -Principal  $principal `
     -Force
 
-Write-Host "[OK] Bling_Enriquecer criada (a cada 1 hora, offset 30min)" -ForegroundColor Green
+Write-Host "[OK] Bling_Enriquecer criada (a cada 15 minutos, offset 7min)" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "Tarefas criadas com sucesso! Verifique no Agendador de Tarefas do Windows." -ForegroundColor Cyan
