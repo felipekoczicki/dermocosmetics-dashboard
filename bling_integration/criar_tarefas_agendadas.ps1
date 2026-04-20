@@ -19,7 +19,7 @@ Register-ScheduledTask `
     -Principal  $principal `
     -Force
 
-Write-Host "[OK] Bling_SyncDiario criada (a cada 1 hora)" -ForegroundColor Green
+Write-Host "[OK] Bling_SyncDiario criada (a cada 15 minutos)" -ForegroundColor Green
 
 # --- Tarefa 2: Enriquecimento (a cada 1 hora, com 30min de offset) ---
 $action2  = New-ScheduledTaskAction -Execute "$BASE\enriquecer.bat"
