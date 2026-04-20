@@ -6,8 +6,8 @@ $BASE = "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration"
 
 # --- Tarefa 1: Sync diario + Export Parquet (03:00) ---
 $action1  = New-ScheduledTaskAction -Execute "$BASE\sync_diario.bat"
-$trigger1 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Hours 1) -Once -At (Get-Date)
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -RunOnlyIfNetworkAvailable -ExecutionTimeLimit (New-TimeSpan -Hours 1)
+$trigger1 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 15) -Once -At (Get-Date)
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -RunOnlyIfNetworkAvailable -ExecutionTimeLimit (New-TimeSpan -Minutes 15)
 $principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -LogonType S4U -RunLevel Highest
 
 Register-ScheduledTask `

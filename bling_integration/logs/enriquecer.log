@@ -2272,3 +2272,64 @@ RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos
 2026-04-18 23:00:36  INFO      Total enriquecidos nesta execucao: 2,985
 2026-04-18 23:00:40  INFO      [conta_1] [##############################] 283,573/283,573 (100.0%)
 2026-04-18 23:00:40  INFO      [conta_2] [##############################] 95,190/95,190 (100.0%)
+2026-04-20 07:44:19  INFO      ============================================================
+2026-04-20 07:44:19  INFO      Enriquecimento de pedidos — inicio
+2026-04-20 07:44:19  INFO      ============================================================
+2026-04-20 07:48:20  INFO      [conta_1] [#############################-] 283,573/283,581 (100.0%)
+2026-04-20 07:48:20  INFO      [conta_2] [#############################-] 95,190/95,229 (100.0%)
+2026-04-20 07:53:47  INFO      [conta_1] 8 pedidos para enriquecer.
+2026-04-20 07:53:57  INFO      ============================================================
+2026-04-20 07:53:57  INFO      Total enriquecidos nesta execucao: 0
+2026-04-20 07:57:08  INFO      [conta_1] [#############################-] 283,574/283,581 (100.0%)
+2026-04-20 07:57:08  INFO      [conta_2] [#############################-] 95,190/95,229 (100.0%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 62, in enriquecer_pedido
+    conn.commit()
+    ~~~~~~~~~~~^^
+sqlite3.OperationalError: database is locked
+2026-04-20 08:40:49  INFO      ============================================================
+2026-04-20 08:40:49  INFO      Enriquecimento de pedidos — inicio
+2026-04-20 08:40:49  INFO      ============================================================
+2026-04-20 08:42:52  INFO      [conta_1] [#############################-] 283,573/283,898 (99.9%)
+2026-04-20 08:42:52  INFO      [conta_2] [#############################-] 95,190/96,195 (99.0%)
+2026-04-20 08:43:13  INFO      [conta_1] 325 pedidos para enriquecer.
+2026-04-20 08:45:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:45:16  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:45:42  INFO      [conta_1] Concluido nesta execucao.
+2026-04-20 08:45:53  INFO      [conta_2] 1,005 pedidos para enriquecer.
+2026-04-20 08:45:54  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:46:05  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:46:15  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:46:26  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:46:36  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:46:47  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:46:57  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-20 08:47:18  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:47:28  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-20 08:47:48  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:47:59  WARNING   Rate limit atingido. Aguardando 10s (tentativa 1/3).
+2026-04-20 08:48:09  WARNING   Rate limit atingido. Aguardando 20s (tentativa 2/3).
+2026-04-20 08:48:29  WARNING   Rate limit atingido. Aguardando 30s (tentativa 3/3).
+2026-04-20 08:48:59  INFO      ============================================================
+2026-04-20 08:48:59  INFO      Total enriquecidos nesta execucao: 334
+2026-04-20 08:50:03  INFO      [conta_1] [##############################] 283,898/283,898 (100.0%)
+2026-04-20 08:50:03  INFO      [conta_2] [#############################-] 95,199/96,195 (99.0%)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 124, in main
+    ok = enriquecer_pedido(conn, client, pedido_id, account.name)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\run_enriquecer.py", line 53, in enriquecer_pedido
+    resp = client.get_pedido(pedido_id)
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 95, in get_pedido
+    return self.get(f"/pedidos/vendas/{pedido_id}")
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\client.py", line 70, in get
+    raise RuntimeError(f"Falha apos {_MAX_RETRIES} tentativas em {url}")
+RuntimeError: Falha apos 3 tentativas em https://api.bling.com.br/Api/v3/pedidos/vendas/25605558629

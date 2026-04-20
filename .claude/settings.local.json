@@ -27,7 +27,8 @@
       "Bash(xargs -I{} taskkill /PID {} /F)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/api/novos?depois=0)",
       "Bash(cmd:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(python3:*)"
     ]
   },
   "hooks": {
