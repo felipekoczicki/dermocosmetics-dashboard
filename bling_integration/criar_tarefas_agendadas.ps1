@@ -12,14 +12,14 @@ $principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -LogonType S4U -Ru
 
 Register-ScheduledTask `
     -TaskName   "Bling_SyncDiario" `
-    -Description "Sync incremental Bling + Export Parquet (a cada 15 minutos)" `
+    -Description "Sync incremental Bling + Export Parquet (a cada 5 minutos)" `
     -Action     $action1 `
     -Trigger    $trigger1 `
     -Settings   $settings `
     -Principal  $principal `
     -Force
 
-Write-Host "[OK] Bling_SyncDiario criada (a cada 15 minutos)" -ForegroundColor Green
+Write-Host "[OK] Bling_SyncDiario criada (a cada 5 minutos)" -ForegroundColor Green
 
 # --- Tarefa 2: Enriquecimento (a cada 1 hora, com 30min de offset) ---
 $action2  = New-ScheduledTaskAction -Execute "$BASE\enriquecer.bat"
@@ -27,14 +27,14 @@ $trigger2 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 
 
 Register-ScheduledTask `
     -TaskName   "Bling_Enriquecer" `
-    -Description "Enriquecimento incremental de pedidos Bling (a cada 15 minutos)" `
+    -Description "Enriquecimento incremental de pedidos Bling (a cada 5 minutos)" `
     -Action     $action2 `
     -Trigger    $trigger2 `
     -Settings   $settings `
     -Principal  $principal `
     -Force
 
-Write-Host "[OK] Bling_Enriquecer criada (a cada 15 minutos, offset 7min)" -ForegroundColor Green
+Write-Host "[OK] Bling_Enriquecer criada (a cada 5 minutos, offset 7min)" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "Tarefas criadas com sucesso! Verifique no Agendador de Tarefas do Windows." -ForegroundColor Cyan
