@@ -12895,3 +12895,5 @@ Arquivos em: C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exp
 2026-04-27 17:46:33  INFO      Resumo [conta_2]: 2192 pedidos sincronizados
 2026-04-27 17:46:33  INFO      Total no banco [conta_2]: 105159 registros
 2026-04-27 17:46:33  INFO      Sincronização concluída.
+C:\Users\Lenovo\Desktop\Claude_Cloude_Project\bling_integration\exportar_parquet.py:118: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors="coerce")
